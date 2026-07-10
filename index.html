@@ -43,7 +43,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         '  .altino-mobile-shell { display: block; width: 100%; background: #FFF2D7; padding: 10px 14px; }',
         '  .altino-mobile-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }',
         '  .altino-mobile-brand { color: #426E50; font-weight: 800; text-decoration: none; font-size: 1.05rem; }',
-        '  .menu-toggle { border: 0; background: #426E50; color: #FFF2D7; border-radius: 10px; padding: 10px 14px; font-weight: 700; cursor: pointer; }',
+        '  .menu-toggle { border: 0; background: transparent; color: #426E50; padding: 8px 4px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }',
+        '  .menu-toggle .menu-icon { width: 26px; height: 18px; display: inline-flex; flex-direction: column; justify-content: space-between; }',
+        '  .menu-toggle .menu-icon span { display: block; width: 100%; height: 2.5px; background: #426E50; border-radius: 2px; transform-origin: center; transition: transform .25s ease, opacity .2s ease; }',
+        '  .menu-toggle.open .menu-icon span:nth-child(1) { transform: translateY(7.8px) rotate(45deg); }',
+        '  .menu-toggle.open .menu-icon span:nth-child(2) { opacity: 0; }',
+        '  .menu-toggle.open .menu-icon span:nth-child(3) { transform: translateY(-7.8px) rotate(-45deg); }',
         '  .site-nav { display: none; margin-top: 10px; background: #FFF2D7; border-top: 1px solid rgba(66, 110, 80, 0.25); padding-top: 10px; }',
         '  .site-nav.open { display: flex; flex-direction: column; gap: 8px; }',
         '  .site-nav a { color: #426E50; text-decoration: none; font-weight: 700; padding: 10px 12px; border-radius: 10px; }',
@@ -76,7 +81,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       shell.innerHTML =
         '<div class="altino-mobile-top">' +
         '<a class="altino-mobile-brand" href="' + hrefInicio + '">Altino</a>' +
-        '<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="altino-mobile-menu">Menu</button>' +
+        '<button class="menu-toggle" type="button" aria-label="Abrir menu principal" aria-expanded="false" aria-controls="altino-mobile-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>' +
         '</div>' +
         '<div id="altino-mobile-menu" class="site-nav" role="navigation" aria-label="Principal">' +
         '<a href="' + hrefInicio + '">Inicio</a>' +
@@ -91,12 +96,16 @@ document.addEventListener('DOMContentLoaded', async function() {
       const panel = shell.querySelector('.site-nav');
       btn.addEventListener('click', function() {
         const open = panel.classList.toggle('open');
+        btn.classList.toggle('open', open);
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Cerrar menu principal' : 'Abrir menu principal');
       });
       panel.querySelectorAll('a').forEach(function(a) {
         a.addEventListener('click', function() {
           panel.classList.remove('open');
+          btn.classList.remove('open');
           btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Abrir menu principal');
         });
       });
     }

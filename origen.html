@@ -35,8 +35,15 @@
   .altino-link-active::after{content:'';position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:#981915;border-radius:2px;}
   .altino-wa{margin-left:8px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.92rem;padding:10px 20px;border-radius:9999px;white-space:nowrap;}
   .altino-mobile{display:none;}
-  .altino-mobile summary{list-style:none;display:inline-flex;align-items:center;gap:8px;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.92rem;padding:10px 14px;border-radius:9999px;cursor:pointer;}
+  .altino-mobile summary{list-style:none;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:#426E50;padding:8px 4px;cursor:pointer;border:none;}
   .altino-mobile summary::-webkit-details-marker{display:none;}
+  .altino-mobile summary::marker{display:none;}
+  .menu-label-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  .menu-icon{width:26px;height:18px;display:inline-flex;flex-direction:column;justify-content:space-between;}
+  .menu-icon span{display:block;width:100%;height:2.5px;background:#426E50;border-radius:2px;transform-origin:center;transition:transform .25s ease,opacity .2s ease;}
+  .altino-mobile[open] .menu-icon span:nth-child(1){transform:translateY(7.8px) rotate(45deg);}
+  .altino-mobile[open] .menu-icon span:nth-child(2){opacity:0;}
+  .altino-mobile[open] .menu-icon span:nth-child(3){transform:translateY(-7.8px) rotate(-45deg);}
   .altino-mobile-panel{display:flex;flex-direction:column;gap:4px;margin-top:10px;padding:10px 0 0;border-top:1px solid rgba(66,110,80,0.15);}
   .altino-mobile-link{text-decoration:none;color:#426E50;font-weight:700;font-size:1rem;padding:10px 2px;}
   .altino-mobile-wa{text-decoration:none;text-align:center;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.95rem;padding:12px;border-radius:9999px;margin-top:8px;}
@@ -64,7 +71,10 @@
           <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp" class="altino-wa"><span>✆</span> Pedir por WhatsApp</a>
         </div>
         <details class="altino-mobile">
-          <summary>☰ Menú</summary>
+          <summary aria-label="Abrir menu principal">
+            <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span class="menu-label-sr">Menu</span>
+          </summary>
           <div class="altino-mobile-panel">
             <a href="index.html" class="altino-mobile-link">Inicio</a>
             <a href="origen.html" class="altino-mobile-link">Origen</a>

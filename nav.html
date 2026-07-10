@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
   <nav aria-label="Principal" style="background:#FFF2D7;box-shadow:{{ navShadow }};transition:box-shadow .25s ease;">
     <div style="max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
 
-      <a href="Home.dc.html" aria-label="Altino — Café Noble — Inicio" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0;">
-        <img src="assets/logo-altino-verde.png" alt="Altino Café Noble — Aroma del Paramillo" style="height:60px;width:auto;display:block;" />
+      <a href="index.html" aria-label="Altino — Café Noble — Inicio" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0;">
+        <img src="assets/AF_LOGO%20CAFE%20ALTINO_verde.png" alt="Altino Café Noble — Aroma del Paramillo" style="height:60px;width:auto;display:block;" />
       </a>
 
       <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
@@ -78,10 +78,10 @@ class Component extends DCLogic {
   renderVals() {
     const active = this.props.active ?? 'home';
     const defs = [
-      { key: 'home', label: 'Inicio', href: 'Home.dc.html' },
-      { key: 'origen', label: 'Origen', href: 'Origen.dc.html' },
-      { key: 'catalogo', label: 'Catálogo', href: 'Catalogo.dc.html' },
-      { key: 'contacto', label: 'Contacto', href: 'Contacto.dc.html' },
+      { key: 'home', label: 'Inicio', href: 'index.html' },
+      { key: 'origen', label: 'Origen', href: 'origen.html' },
+      { key: 'catalogo', label: 'Catálogo', href: 'catalog.html' },
+      { key: 'contacto', label: 'Contacto', href: 'contact.html' },
     ];
     const links = defs.map((d) => ({ ...d, active: d.key === active, inactive: d.key !== active }));
     const waUrl = 'https://wa.me/573137119699?text=' + encodeURIComponent('Hola, quiero hacer un pedido de café Altino');

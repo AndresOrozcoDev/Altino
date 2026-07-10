@@ -21,26 +21,58 @@
 <style>
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{margin:0;background:#FFF2D7;}
+  body{margin:0;background:#FFF2D7;overflow-x:hidden;}
   a:focus-visible,button:focus-visible{outline:3px solid #981915;outline-offset:2px;border-radius:6px;}
+  .altino-header{position:sticky;top:0;z-index:50;font-family:'Nunito',sans-serif;}
+  .altino-nav{background:#FFF2D7;box-shadow:0 1px 0 rgba(66,110,80,0.08);}
+  .altino-nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .altino-brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
+  .altino-brand img{height:60px;width:auto;display:block;}
+  .altino-links{display:flex;align-items:center;gap:8px;}
+  .altino-link{position:relative;text-decoration:none;color:#59614D;font-weight:600;font-size:.95rem;padding:8px 14px;border-radius:9999px;transition:color .2s ease;}
+  .altino-link-active{color:#426E50;font-weight:700;}
+  .altino-link-active::after{content:'';position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:#981915;border-radius:2px;}
+  .altino-wa{margin-left:8px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.92rem;padding:10px 20px;border-radius:9999px;white-space:nowrap;}
+  .altino-mobile{display:none;max-width:1200px;margin:0 auto;padding:0 16px 14px;}
+  .altino-mobile summary{list-style:none;display:inline-flex;align-items:center;gap:8px;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.92rem;padding:10px 14px;border-radius:9999px;cursor:pointer;}
+  .altino-mobile summary::-webkit-details-marker{display:none;}
+  .altino-mobile-panel{display:flex;flex-direction:column;gap:4px;margin-top:10px;padding:10px 0 0;border-top:1px solid rgba(66,110,80,0.15);}
+  .altino-mobile-link{text-decoration:none;color:#426E50;font-weight:700;font-size:1rem;padding:10px 2px;}
+  .altino-mobile-wa{text-decoration:none;text-align:center;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.95rem;padding:12px;border-radius:9999px;margin-top:8px;}
+  @media (max-width: 900px){
+    .altino-nav-inner{padding:12px 16px;}
+    .altino-brand img{height:48px;}
+    .altino-links{display:none;}
+    .altino-mobile{display:block;}
+  }
 </style>
 </helmet>
 
 <div style="font-family:'Nunito',sans-serif;color:#2C2C2C;background:#FFF2D7;">
-  <header style="position:sticky;top:0;z-index:50;font-family:'Nunito',sans-serif;">
-    <nav aria-label="Principal" style="background:#FFF2D7;box-shadow:0 1px 0 rgba(66,110,80,0.08);transition:box-shadow .25s ease;">
-      <div style="max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
-        <a href="index.html" aria-label="Altino - Cafe Noble - Inicio" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0;">
-          <img src="assets/AF_LOGO%20CAFE%20ALTINO_verde.png" alt="Altino Cafe Noble - Aroma del Paramillo" style="height:60px;width:auto;display:block;" />
+  <header class="altino-header">
+    <nav aria-label="Principal" class="altino-nav">
+      <div class="altino-nav-inner">
+        <a href="index.html" aria-label="Altino - Cafe Noble - Inicio" class="altino-brand">
+          <img src="assets/AF_LOGO%20CAFE%20ALTINO_verde.png" alt="Altino Cafe Noble - Aroma del Paramillo" />
         </a>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <a href="index.html" style="text-decoration:none;color:#59614D;font-weight:600;font-size:.95rem;padding:8px 14px;border-radius:9999px;transition:color .2s ease;" style-hover="color:#426E50;">Inicio</a>
-          <a href="origen.html" style="text-decoration:none;color:#59614D;font-weight:600;font-size:.95rem;padding:8px 14px;border-radius:9999px;transition:color .2s ease;" style-hover="color:#426E50;">Origen</a>
-          <a href="catalog.html" aria-current="page" style="position:relative;text-decoration:none;color:#426E50;font-weight:700;font-size:.95rem;padding:8px 14px;">Catálogo<span style="position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:#981915;border-radius:2px;"></span></a>
-          <a href="contact.html" style="text-decoration:none;color:#59614D;font-weight:600;font-size:.95rem;padding:8px 14px;border-radius:9999px;transition:color .2s ease;" style-hover="color:#426E50;">Contacto</a>
-          <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp" style="margin-left:8px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.92rem;padding:10px 20px;border-radius:9999px;transition:background .2s ease, transform .2s ease;" style-hover="background:#59614D;transform:translateY(-1px);"><span>✆</span> Pedir por WhatsApp</a>
+        <div class="altino-links">
+          <a href="index.html" class="altino-link">Inicio</a>
+          <a href="origen.html" class="altino-link">Origen</a>
+          <a href="catalog.html" aria-current="page" class="altino-link altino-link-active">Catálogo</a>
+          <a href="contact.html" class="altino-link">Contacto</a>
+          <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp" class="altino-wa"><span>✆</span> Pedir por WhatsApp</a>
         </div>
       </div>
+      <details class="altino-mobile">
+        <summary>☰ Menú</summary>
+        <div class="altino-mobile-panel">
+          <a href="index.html" class="altino-mobile-link">Inicio</a>
+          <a href="origen.html" class="altino-mobile-link">Origen</a>
+          <a href="catalog.html" class="altino-mobile-link">Catálogo</a>
+          <a href="contact.html" class="altino-mobile-link">Contacto</a>
+          <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" class="altino-mobile-wa">✆ Pedir por WhatsApp</a>
+        </div>
+      </details>
     </nav>
   </header>
 

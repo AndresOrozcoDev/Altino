@@ -48,10 +48,13 @@
   .altino-mobile-link{text-decoration:none;color:#426E50;font-weight:700;font-size:1rem;padding:10px 2px;}
   .altino-mobile-wa{text-decoration:none;text-align:center;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.95rem;padding:12px;border-radius:9999px;margin-top:8px;}
   @media (max-width: 900px){
-    .altino-nav-inner{padding:12px 16px;}
+    .altino-nav-inner{padding:12px 16px;flex-wrap:wrap;align-items:center;}
     .altino-brand img{height:48px;}
     .altino-links{display:none;}
     .altino-mobile{display:block;margin-left:auto;}
+    .altino-mobile[open]{flex-basis:100%;width:100%;margin-left:0;}
+    .altino-mobile[open] summary{margin-left:auto;}
+    .altino-mobile[open] .altino-mobile-panel{width:100%;}
   }
 </style>
 </helmet>

@@ -63,7 +63,86 @@
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px;">
         <sc-for list="{{ cafes }}" as="c" hint-placeholder-count="4">
-          <dc-import name="ProductCard" name="{{ c.name }}" badge="{{ c.badge }}" badge-color="{{ c.badgeColor }}" process-desc="{{ c.processDesc }}" notes="{{ c.notes }}" prices="{{ c.prices }}" acidez="{{ c.acidez }}" tostion="{{ c.tostion }}" dulzor="{{ c.dulzor }}" acidez-label="{{ c.acidezLabel }}" tostion-label="{{ c.tostionLabel }}" dulzor-label="{{ c.dulzorLabel }}" hint-size="100%,560px"></dc-import>
+          <div style="display:flex;flex-direction:column;background:#FFFFFF;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);border:1px solid rgba(66,110,80,0.10);transition:transform .2s ease, box-shadow .2s ease;font-family:'Nunito',sans-serif;height:100%;" style-hover="transform:translateY(-4px);box-shadow:0 8px 32px rgba(66,110,80,0.18);">
+            <div style="position:relative;aspect-ratio:1/1;background:#59614D;background-image:url('assets/background.svg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;">
+              <div style="position:absolute;inset:0;background:linear-gradient(160deg, rgba(66,110,80,0.55), rgba(89,97,77,0.75));"></div>
+              <span style="position:relative;font-family:'Courier New',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,242,215,0.85);">[ foto · {{ c.badge }} ]</span>
+              <span style="position:absolute;top:14px;left:14px;background:{{ c.badgeColor }};color:#FFF2D7;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:9999px;">{{ c.badge }}</span>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:14px;padding:20px;flex:1;">
+              <div style="display:flex;flex-direction:column;gap:4px;">
+                <h3 style="margin:0;font-size:1.25rem;font-weight:700;color:#2C2C2C;line-height:1.2;">{{ c.name }}</h3>
+                <span style="font-size:.8rem;color:#59614D;font-weight:500;">{{ c.processDesc }}</span>
+              </div>
+
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <sc-for list="{{ c.notes }}" as="note" hint-placeholder-count="3">
+                  <span style="font-size:.72rem;font-weight:600;color:#426E50;background:rgba(66,110,80,0.08);border:1px solid rgba(66,110,80,0.18);padding:4px 10px;border-radius:9999px;">{{ note }}</span>
+                </sc-for>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:8px;padding:12px 0;border-top:1px solid rgba(66,110,80,0.12);border-bottom:1px solid rgba(66,110,80,0.12);">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <span style="font-size:.78rem;font-weight:700;color:#59614D;text-transform:uppercase;letter-spacing:.04em;">Acidez</span>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span style="font-size:.78rem;color:#2C2C2C;font-weight:500;">{{ c.acidezLabel }}</span>
+                    <div style="display:flex;gap:4px;">
+                      <sc-if value="{{ c.acidez >= 1 }}" hint-placeholder-val="{{ true }}"><span style="width:9px;height:9px;border-radius:9999px;background:#426E50;display:block;"></span></sc-if>
+                      <sc-if value="{{ c.acidez < 1 }}" hint-placeholder-val="{{ false }}"><span style="width:9px;height:9px;border-radius:9999px;background:rgba(66,110,80,0.18);display:block;"></span></sc-if>
+                      <sc-if value="{{ c.acidez >= 2 }}" hint-placeholder-val="{{ true }}"><span style="width:9px;height:9px;border-radius:9999px;background:#426E50;display:block;"></span></sc-if>
+                      <sc-if value="{{ c.acidez < 2 }}" hint-placeholder-val="{{ false }}"><span style="width:9px;height:9px;border-radius:9999px;background:rgba(66,110,80,0.18);display:block;"></span></sc-if>
+                      <sc-if value="{{ c.acidez >= 3 }}" hint-placeholder-val="{{ true }}"><span style="width:9px;height:9px;border-radius:9999px;background:#426E50;display:block;"></span></sc-if>
+                      <sc-if value="{{ c.acidez < 3 }}" hint-placeholder-val="{{ false }}"><span style="width:9px;height:9px;border-radius:9999px;background:rgba(66,110,80,0.18);display:block;"></span></sc-if>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <span style="font-size:.78rem;font-weight:700;color:#59614D;text-transform:uppercase;letter-spacing:.04em;">Tostión</span>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span style="font-size:.78rem;color:#2C2C2C;font-weight:500;">{{ c.tostionLabel }}</span>
+                    <div style="display:flex;gap:4px;">
+                      <sc-if value="{{ c.tostion >= 1 }}" hint-placeholder-val="{{ true }}"><span style="width:9px;height:9px;border-radius:9999px;background:#426E50;display:block;"></span></sc-if>
+                      <sc-if value="{{ c.tostion < 1 }}" hint-placeholder-val="{{ false }}"><span style="width:9px;height:9px;border-radius:9999px;background:rgba(66,110,80,0.18);display:block;"></span></sc-if>
+                      <sc-if value="{{ c.tostion >= 2 }}" hint-placeholder-val="{{ true }}"><span style="width:9px;height:9px;border-radius:9999px;background:#426E50;display:block;"></span></sc-if>
+                      <sc-if value="{{ c.tostion < 2 }}" hint-placeholder-val="{{ false }}"><span style="width:9px;height:9px;border-radius:9999px;background:rgba(66,110,80,0.18);display:block;"></span></sc-if>
+                      <sc-if value="{{ c.tostion >= 3 }}" hint-placeholder-val="{{ true }}"><span style="width:9px;height:9px;border-radius:9999px;background:#426E50;display:block;"></span></sc-if>
+                      <sc-if value="{{ c.tostion < 3 }}" hint-placeholder-val="{{ false }}"><span style="width:9px;height:9px;border-radius:9999px;background:rgba(66,110,80,0.18);display:block;"></span></sc-if>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <span style="font-size:.78rem;font-weight:700;color:#59614D;text-transform:uppercase;letter-spacing:.04em;">Dulzor</span>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span style="font-size:.78rem;color:#2C2C2C;font-weight:500;">{{ c.dulzorLabel }}</span>
+                    <div style="display:flex;gap:4px;">
+                      <sc-if value="{{ c.dulzor >= 1 }}" hint-placeholder-val="{{ true }}"><span style="width:9px;height:9px;border-radius:9999px;background:#426E50;display:block;"></span></sc-if>
+                      <sc-if value="{{ c.dulzor < 1 }}" hint-placeholder-val="{{ false }}"><span style="width:9px;height:9px;border-radius:9999px;background:rgba(66,110,80,0.18);display:block;"></span></sc-if>
+                      <sc-if value="{{ c.dulzor >= 2 }}" hint-placeholder-val="{{ true }}"><span style="width:9px;height:9px;border-radius:9999px;background:#426E50;display:block;"></span></sc-if>
+                      <sc-if value="{{ c.dulzor < 2 }}" hint-placeholder-val="{{ false }}"><span style="width:9px;height:9px;border-radius:9999px;background:rgba(66,110,80,0.18);display:block;"></span></sc-if>
+                      <sc-if value="{{ c.dulzor >= 3 }}" hint-placeholder-val="{{ true }}"><span style="width:9px;height:9px;border-radius:9999px;background:#426E50;display:block;"></span></sc-if>
+                      <sc-if value="{{ c.dulzor < 3 }}" hint-placeholder-val="{{ false }}"><span style="width:9px;height:9px;border-radius:9999px;background:rgba(66,110,80,0.18);display:block;"></span></sc-if>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <sc-for list="{{ c.prices }}" as="p" hint-placeholder-count="2">
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;">
+                    <span style="font-size:.85rem;color:#59614D;font-weight:500;">{{ p.size }}</span>
+                    <span style="font-size:1.05rem;color:#426E50;font-weight:700;">{{ p.price }}</span>
+                  </div>
+                </sc-for>
+              </div>
+
+              <a href="{{ c.wa }}" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp" style="margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.95rem;padding:12px 18px;border-radius:9999px;transition:background .2s ease;" style-hover="background:#59614D;">
+                <span style="font-size:1.05rem;">✆</span> Pedir por WhatsApp
+              </a>
+            </div>
+          </div>
         </sc-for>
       </div>
     </section>
@@ -250,7 +329,7 @@ class Component extends DCLogic {
       { name: 'Fermentación Extendida', badge: 'Fermentación', badgeColor: '#426E50', processDesc: 'Fermentación de 192 horas con piña', notes: ['Chocolate amargo', 'Avellana', 'Frutos tropicales'], acidez: 3, tostion: 2, dulzor: 3, acidezLabel: 'Media-Alta', tostionLabel: 'Media', dulzorLabel: 'Alto', prices: [{ size: '250 gr', price: '$37.000' }, { size: '2.5 kg', price: '$210.000' }] },
       { name: 'Honey', badge: 'Honey', badgeColor: '#B8860B', processDesc: 'Fermentado en cereza y secado en mucílago', notes: ['Frutos rojos', 'Miel', 'Lima dulce'], acidez: 2, tostion: 2, dulzor: 3, acidezLabel: 'Media', tostionLabel: 'Media', dulzorLabel: 'Alto', prices: [{ size: '250 gr', price: '$37.000' }, { size: '2.5 kg', price: '$210.000' }] },
       { name: 'Natural', badge: 'Natural', badgeColor: '#981915', processDesc: 'Fermentado y secado en cereza', notes: ['Fruta madura', 'Toque vinoso'], acidez: 1, tostion: 2, dulzor: 3, acidezLabel: 'Media-baja', tostionLabel: 'Media', dulzorLabel: 'Muy alto', prices: [{ size: '250 gr', price: '$40.000' }, { size: '2.5 kg', price: '$245.000' }] },
-    ];
+    ].map((it) => ({ ...it, wa: wa(it.name) }));
 
     const estandar = [
       { size: '250 gr', price: '$23.500' },

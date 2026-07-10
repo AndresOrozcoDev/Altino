@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+</helmet>
+
+<header style="position:sticky;top:0;z-index:50;font-family:'Nunito',sans-serif;">
+  <nav aria-label="Principal" style="background:#FFF2D7;box-shadow:{{ navShadow }};transition:box-shadow .25s ease;">
+    <div style="max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+
+      <a href="Home.dc.html" aria-label="Altino — Café Noble — Inicio" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0;">
+        <img src="assets/logo-altino-verde.png" alt="Altino Café Noble — Aroma del Paramillo" style="height:60px;width:auto;display:block;" />
+      </a>
+
+      <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <sc-for list="{{ links }}" as="link" hint-placeholder-count="4">
+            <sc-if value="{{ link.active }}" hint-placeholder-val="{{ false }}">
+              <a href="{{ link.href }}" aria-current="page" style="position:relative;text-decoration:none;color:#426E50;font-weight:700;font-size:.95rem;padding:8px 14px;">{{ link.label }}<span style="position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:#981915;border-radius:2px;"></span></a>
+            </sc-if>
+            <sc-if value="{{ link.inactive }}" hint-placeholder-val="{{ true }}">
+              <a href="{{ link.href }}" style="text-decoration:none;color:#59614D;font-weight:600;font-size:.95rem;padding:8px 14px;border-radius:9999px;transition:color .2s ease;" style-hover="color:#426E50;">{{ link.label }}</a>
+            </sc-if>
+          </sc-for>
+          <a href="{{ waUrl }}" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp" style="margin-left:8px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.92rem;padding:10px 20px;border-radius:9999px;transition:background .2s ease, transform .2s ease;" style-hover="background:#59614D;transform:translateY(-1px);"><span>✆</span> Pedir por WhatsApp</a>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ toggleMenu }}" aria-label="Abrir menú" aria-expanded="{{ menuOpen }}" style="display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;">
+          <span style="width:26px;height:2.5px;background:#426E50;border-radius:2px;display:block;"></span>
+          <span style="width:26px;height:2.5px;background:#426E50;border-radius:2px;display:block;"></span>
+          <span style="width:26px;height:2.5px;background:#426E50;border-radius:2px;display:block;"></span>
+        </button>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ showMobilePanel }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#FFF2D7;border-top:1px solid rgba(66,110,80,0.15);padding:12px 24px 20px;display:flex;flex-direction:column;gap:4px;box-shadow:0 8px 24px rgba(66,110,80,0.12);">
+        <sc-for list="{{ links }}" as="link" hint-placeholder-count="4">
+          <a href="{{ link.href }}" style="text-decoration:none;color:#426E50;font-weight:700;font-size:1.05rem;padding:12px 4px;border-bottom:1px solid rgba(66,110,80,0.10);">{{ link.label }}</a>
+        </sc-for>
+        <a href="{{ waUrl }}" target="_blank" rel="noopener" style="margin-top:12px;text-align:center;text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;padding:12px;border-radius:9999px;">✆ Pedir por WhatsApp</a>
+      </div>
+    </sc-if>
+  </nav>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;home&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;origen&quot;,&quot;catalogo&quot;,&quot;contacto&quot;]}}">
+class Component extends DCLogic {
+  state = { scrolled: false, menuOpen: false, isMobile: false };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const s = window.scrollY > 8;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._mql = window.matchMedia('(max-width: 860px)');
+    this._onMql = (e) => this.setState({ isMobile: e.matches, menuOpen: false });
+    this.setState({ isMobile: this._mql.matches });
+    this._mql.addEventListener('change', this._onMql);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._mql) this._mql.removeEventListener('change', this._onMql);
+  }
+
+  renderVals() {
+    const active = this.props.active ?? 'home';
+    const defs = [
+      { key: 'home', label: 'Inicio', href: 'Home.dc.html' },
+      { key: 'origen', label: 'Origen', href: 'Origen.dc.html' },
+      { key: 'catalogo', label: 'Catálogo', href: 'Catalogo.dc.html' },
+      { key: 'contacto', label: 'Contacto', href: 'Contacto.dc.html' },
+    ];
+    const links = defs.map((d) => ({ ...d, active: d.key === active, inactive: d.key !== active }));
+    const waUrl = 'https://wa.me/573137119699?text=' + encodeURIComponent('Hola, quiero hacer un pedido de café Altino');
+    const isMobile = this.state.isMobile;
+    return {
+      links, waUrl,
+      desktop: !isMobile, mobile: isMobile,
+      menuOpen: this.state.menuOpen,
+      showMobilePanel: isMobile && this.state.menuOpen,
+      navShadow: this.state.scrolled ? '0 4px 20px rgba(66,110,80,0.14)' : '0 1px 0 rgba(66,110,80,0.08)',
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+    };
+  }
+}
+</script>
+</body>
+</html>

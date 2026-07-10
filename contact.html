@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Contacto y Distribuidores | Altino Café Noble</title>
+<meta name="description" content="Contáctanos por WhatsApp o Instagram. Precios especiales para distribuidores y cafeterías. Dabeiba, Antioquia.">
+<meta property="og:title" content="Contacto — Altino Café Noble">
+<meta property="og:description" content="Escríbenos por WhatsApp o Instagram. Distribuidores y cafeterías bienvenidos.">
+<meta property="og:image" content="assets/og-contacto.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#FFF2D7;}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #981915;outline-offset:2px;border-radius:6px;}
+  input::placeholder,textarea::placeholder{color:#9a9a8a;}
+</style>
+</helmet>
+
+<div style="font-family:'Nunito',sans-serif;color:#2C2C2C;background:#FFF2D7;">
+  <dc-import name="AltinoNav" active="contacto" hint-size="100%,72px"></dc-import>
+
+  <main>
+    <!-- HERO -->
+    <section data-screen-label="Contacto Hero" style="position:relative;overflow:hidden;background:linear-gradient(150deg,#35583f 0%,#426E50 70%);">
+      <div style="position:absolute;inset:0;background-image:url('assets/topo-cream.svg');background-size:cover;background-position:center;opacity:0.18;"></div>
+      <div style="position:relative;max-width:1100px;margin:0 auto;padding:108px 24px 72px;display:flex;flex-direction:column;gap:14px;">
+        <span style="font-size:.82rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,242,215,0.72);">Hablemos de café</span>
+        <h1 style="margin:0;font-size:clamp(2.4rem,5.5vw,3.6rem);font-weight:800;line-height:1.05;color:#FFF2D7;">Contacto</h1>
+        <p style="margin:0;max-width:560px;font-size:1.05rem;line-height:1.6;color:rgba(255,242,215,0.9);">¿Quieres hacer un pedido o distribuir Altino? Escríbenos y te respondemos directamente.</p>
+      </div>
+    </section>
+
+    <!-- FORM + DATOS -->
+    <section data-screen-label="Formulario" style="max-width:1100px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:start;">
+
+      <!-- FORM -->
+      <div style="background:#FFFFFF;border-radius:18px;border:1px solid rgba(66,110,80,0.12);box-shadow:0 4px 16px rgba(66,110,80,0.10);padding:36px;">
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:20px;">
+            <h2 style="margin:0;font-size:1.5rem;font-weight:800;color:#426E50;">Envíanos un mensaje</h2>
+
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:700;color:#59614D;">Nombre completo *
+              <input type="text" name="nombre" value="{{ nombre }}" onChange="{{ onNombre }}" placeholder="Tu nombre" style="font-family:'Nunito',sans-serif;font-size:1rem;font-weight:500;color:#2C2C2C;padding:12px 14px;border:1.5px solid {{ nombreBorder }};border-radius:10px;background:#FFF9EC;outline:none;" style-focus="border-color:#426E50;"/>
+              <sc-if value="{{ errNombre }}" hint-placeholder-val="{{ false }}"><span style="font-size:.78rem;font-weight:600;color:#981915;">Por favor ingresa tu nombre.</span></sc-if>
+            </label>
+
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:700;color:#59614D;">Correo electrónico *
+              <input type="email" name="correo" value="{{ correo }}" onChange="{{ onCorreo }}" placeholder="tucorreo@ejemplo.com" style="font-family:'Nunito',sans-serif;font-size:1rem;font-weight:500;color:#2C2C2C;padding:12px 14px;border:1.5px solid {{ correoBorder }};border-radius:10px;background:#FFF9EC;outline:none;" style-focus="border-color:#426E50;"/>
+              <sc-if value="{{ errCorreo }}" hint-placeholder-val="{{ false }}"><span style="font-size:.78rem;font-weight:600;color:#981915;">Ingresa un correo válido.</span></sc-if>
+            </label>
+
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:700;color:#59614D;">Teléfono (opcional)
+              <input type="tel" name="telefono" value="{{ telefono }}" onChange="{{ onTelefono }}" placeholder="(+57) 300 000 0000" style="font-family:'Nunito',sans-serif;font-size:1rem;font-weight:500;color:#2C2C2C;padding:12px 14px;border:1.5px solid rgba(66,110,80,0.25);border-radius:10px;background:#FFF9EC;outline:none;" style-focus="border-color:#426E50;"/>
+            </label>
+
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:700;color:#59614D;">Mensaje *
+              <textarea name="mensaje" rows="4" value="{{ mensaje }}" onChange="{{ onMensaje }}" placeholder="Cuéntanos qué necesitas..." style="font-family:'Nunito',sans-serif;font-size:1rem;font-weight:500;color:#2C2C2C;padding:12px 14px;border:1.5px solid {{ mensajeBorder }};border-radius:10px;background:#FFF9EC;outline:none;resize:vertical;"></textarea>
+              <sc-if value="{{ errMensaje }}" hint-placeholder-val="{{ false }}"><span style="font-size:.78rem;font-weight:600;color:#981915;">Escribe un mensaje.</span></sc-if>
+            </label>
+
+            <label style="display:flex;align-items:flex-start;gap:10px;font-size:.92rem;font-weight:500;color:#2C2C2C;cursor:pointer;">
+              <input type="checkbox" checked="{{ esDistribuidor }}" onChange="{{ onToggle }}" style="width:20px;height:20px;accent-color:#426E50;margin-top:1px;flex-shrink:0;"/>
+              <span>Soy distribuidor / tengo una cafetería</span>
+            </label>
+
+            <button type="submit" style="font-family:'Nunito',sans-serif;cursor:pointer;border:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:1.05rem;padding:15px;border-radius:9999px;transition:background .2s ease, transform .2s ease;" style-hover="background:#59614D;transform:translateY(-1px);">Enviar mensaje</button>
+            <span style="font-size:.78rem;color:#59614D;text-align:center;">Tu mensaje se abrirá en WhatsApp listo para enviar.</span>
+          </form>
+        </sc-if>
+
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;padding:24px 8px;">
+            <div style="width:64px;height:64px;border-radius:9999px;background:rgba(66,110,80,0.12);display:flex;align-items:center;justify-content:center;font-size:2rem;color:#426E50;">✓</div>
+            <h2 style="margin:0;font-size:1.5rem;font-weight:800;color:#426E50;">¡Gracias, {{ nombre }}!</h2>
+            <p style="margin:0;font-size:1rem;line-height:1.6;color:#4a4a4a;max-width:340px;">Abrimos WhatsApp con tu mensaje. Si no se abrió, toca el botón para escribirnos directamente.</p>
+            <a href="{{ composedWa }}" target="_blank" rel="noopener" style="text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:1rem;padding:13px 26px;border-radius:9999px;" style-hover="background:#59614D;">Abrir WhatsApp</a>
+            <button onClick="{{ onReset }}" style="font-family:'Nunito',sans-serif;cursor:pointer;background:none;border:none;color:#59614D;font-weight:700;font-size:.9rem;text-decoration:underline;">Enviar otro mensaje</button>
+          </div>
+        </sc-if>
+      </div>
+
+      <!-- DATOS -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div style="display:flex;flex-direction:column;gap:18px;padding:32px;background:#426E50;border-radius:18px;position:relative;overflow:hidden;box-shadow:0 8px 32px rgba(66,110,80,0.18);">
+          <div style="position:absolute;inset:0;background-image:url('assets/topo-cream.svg');background-size:cover;opacity:0.12;"></div>
+          <h2 style="position:relative;margin:0;font-size:1.3rem;font-weight:800;color:#FFF2D7;">Datos de contacto</h2>
+          <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:relative;display:flex;align-items:center;gap:14px;text-decoration:none;color:#FFF2D7;" style-hover="color:#fff;">
+            <span style="width:42px;height:42px;border-radius:10px;background:rgba(255,242,215,0.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">✆</span>
+            <span style="display:flex;flex-direction:column;"><span style="font-size:.75rem;color:rgba(255,242,215,0.7);font-weight:600;text-transform:uppercase;letter-spacing:.08em;">WhatsApp</span><span style="font-size:1.05rem;font-weight:700;">(+57) 313 711 9699</span></span>
+          </a>
+          <a href="https://instagram.com/altino.cafe" target="_blank" rel="noopener" aria-label="Instagram" style="position:relative;display:flex;align-items:center;gap:14px;text-decoration:none;color:#FFF2D7;" style-hover="color:#fff;">
+            <span style="width:42px;height:42px;border-radius:10px;background:rgba(255,242,215,0.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">◎</span>
+            <span style="display:flex;flex-direction:column;"><span style="font-size:.75rem;color:rgba(255,242,215,0.7);font-weight:600;text-transform:uppercase;letter-spacing:.08em;">Instagram</span><span style="font-size:1.05rem;font-weight:700;">@altino.cafe</span></span>
+          </a>
+          <div style="position:relative;display:flex;align-items:center;gap:14px;color:#FFF2D7;">
+            <span style="width:42px;height:42px;border-radius:10px;background:rgba(255,242,215,0.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">⌖</span>
+            <span style="display:flex;flex-direction:column;"><span style="font-size:.75rem;color:rgba(255,242,215,0.7);font-weight:600;text-transform:uppercase;letter-spacing:.08em;">Ubicación</span><span style="font-size:1.05rem;font-weight:700;">Dabeiba, Antioquia, Colombia</span></span>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:14px;padding:28px;background:#FFFFFF;border-radius:18px;border:1px solid rgba(66,110,80,0.12);box-shadow:0 2px 12px rgba(0,0,0,0.05);">
+          <span style="align-self:flex-start;background:#981915;color:#FFF2D7;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:9999px;">Distribuidores</span>
+          <h3 style="margin:0;font-size:1.25rem;font-weight:800;color:#426E50;">¿Tienes una cafetería?</h3>
+          <p style="margin:0;font-size:.98rem;line-height:1.6;color:#4a4a4a;">Precios especiales y catálogo exclusivo para distribuidores y cafeterías. Marca la casilla del formulario o escríbenos directamente.</p>
+          <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20ser%20distribuidor%20de%20Altino" target="_blank" rel="noopener" style="text-align:center;text-decoration:none;background:#981915;color:#FFF2D7;font-weight:700;font-size:.98rem;padding:13px;border-radius:9999px;transition:filter .2s ease;" style-hover="filter:brightness(1.08);">Quiero ser distribuidor →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="AltinoFooter" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { nombre: '', correo: '', telefono: '', mensaje: '', esDistribuidor: false, submitted: false, touched: false };
+
+  compose() {
+    const s = this.state;
+    let t = 'Hola, soy ' + (s.nombre || '') + '.';
+    if (s.esDistribuidor) t += ' Tengo una cafetería / soy distribuidor.';
+    if (s.mensaje) t += ' ' + s.mensaje;
+    const extra = [];
+    if (s.correo) extra.push('correo: ' + s.correo);
+    if (s.telefono) extra.push('tel: ' + s.telefono);
+    if (extra.length) t += ' (' + extra.join(', ') + ')';
+    return 'https://wa.me/573137119699?text=' + encodeURIComponent(t);
+  }
+
+  validate() {
+    const s = this.state;
+    return {
+      nombre: !s.nombre.trim(),
+      correo: !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.correo.trim()),
+      mensaje: !s.mensaje.trim(),
+    };
+  }
+
+  renderVals() {
+    const s = this.state;
+    const errs = this.validate();
+    const showErr = (k) => s.touched && errs[k];
+    const border = (k) => (s.touched && errs[k] ? '#981915' : 'rgba(66,110,80,0.25)');
+    const set = (k) => (e) => this.setState({ [k]: e.target.value });
+    return {
+      nombre: s.nombre, correo: s.correo, telefono: s.telefono, mensaje: s.mensaje,
+      esDistribuidor: s.esDistribuidor,
+      submitted: s.submitted, notSubmitted: !s.submitted,
+      errNombre: showErr('nombre'), errCorreo: showErr('correo'), errMensaje: showErr('mensaje'),
+      nombreBorder: border('nombre'), correoBorder: border('correo'), mensajeBorder: border('mensaje'),
+      composedWa: this.compose(),
+      onNombre: set('nombre'), onCorreo: set('correo'), onTelefono: set('telefono'), onMensaje: set('mensaje'),
+      onToggle: (e) => this.setState({ esDistribuidor: e.target.checked }),
+      onSubmit: (e) => {
+        e.preventDefault();
+        const v = this.validate();
+        if (v.nombre || v.correo || v.mensaje) { this.setState({ touched: true }); return; }
+        const url = this.compose();
+        try { window.open(url, '_blank', 'noopener'); } catch (err) {}
+        this.setState({ submitted: true });
+      },
+      onReset: () => this.setState({ nombre: '', correo: '', telefono: '', mensaje: '', esDistribuidor: false, submitted: false, touched: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>

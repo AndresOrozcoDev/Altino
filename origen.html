@@ -34,7 +34,7 @@
   .altino-link-active{color:#426E50;font-weight:700;}
   .altino-link-active::after{content:'';position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:#981915;border-radius:2px;}
   .altino-wa{margin-left:8px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.92rem;padding:10px 20px;border-radius:9999px;white-space:nowrap;}
-  .altino-mobile{display:none;max-width:1200px;margin:0 auto;padding:0 16px 14px;}
+  .altino-mobile{display:none;}
   .altino-mobile summary{list-style:none;display:inline-flex;align-items:center;gap:8px;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.92rem;padding:10px 14px;border-radius:9999px;cursor:pointer;}
   .altino-mobile summary::-webkit-details-marker{display:none;}
   .altino-mobile-panel{display:flex;flex-direction:column;gap:4px;margin-top:10px;padding:10px 0 0;border-top:1px solid rgba(66,110,80,0.15);}
@@ -44,7 +44,7 @@
     .altino-nav-inner{padding:12px 16px;}
     .altino-brand img{height:48px;}
     .altino-links{display:none;}
-    .altino-mobile{display:block;}
+    .altino-mobile{display:block;margin-left:auto;}
   }
 </style>
 </helmet>
@@ -63,17 +63,17 @@
           <a href="contact.html" class="altino-link">Contacto</a>
           <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp" class="altino-wa"><span>✆</span> Pedir por WhatsApp</a>
         </div>
+        <details class="altino-mobile">
+          <summary>☰ Menú</summary>
+          <div class="altino-mobile-panel">
+            <a href="index.html" class="altino-mobile-link">Inicio</a>
+            <a href="origen.html" class="altino-mobile-link">Origen</a>
+            <a href="catalog.html" class="altino-mobile-link">Catálogo</a>
+            <a href="contact.html" class="altino-mobile-link">Contacto</a>
+            <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" class="altino-mobile-wa">✆ Pedir por WhatsApp</a>
+          </div>
+        </details>
       </div>
-      <details class="altino-mobile">
-        <summary>☰ Menú</summary>
-        <div class="altino-mobile-panel">
-          <a href="index.html" class="altino-mobile-link">Inicio</a>
-          <a href="origen.html" class="altino-mobile-link">Origen</a>
-          <a href="catalog.html" class="altino-mobile-link">Catálogo</a>
-          <a href="contact.html" class="altino-mobile-link">Contacto</a>
-          <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" class="altino-mobile-wa">✆ Pedir por WhatsApp</a>
-        </div>
-      </details>
     </nav>
   </header>
 

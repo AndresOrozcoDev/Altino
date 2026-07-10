@@ -28,6 +28,89 @@ document.addEventListener('DOMContentLoaded', async function() {
   const loading = document.getElementById('__bundler_loading');
   function setStatus(msg) { if (loading) loading.textContent = msg; }
 
+  function patchLocalResponsiveNav() {
+    const nav = document.querySelector('header nav');
+    if (!nav) return false;
+
+    if (!document.getElementById('altino-local-mobile-style')) {
+      const style = document.createElement('style');
+      style.id = 'altino-local-mobile-style';
+      style.textContent = [
+        'html, body { max-width: 100%; overflow-x: hidden; }',
+        '.altino-mobile-shell { display: none; }',
+        '@media (max-width: 900px) {',
+        '  header nav > *:not(.altino-mobile-shell) { display: none !important; }',
+        '  .altino-mobile-shell { display: block; width: 100%; background: #FFF2D7; padding: 10px 14px; }',
+        '  .altino-mobile-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }',
+        '  .altino-mobile-brand { color: #426E50; font-weight: 800; text-decoration: none; font-size: 1.05rem; }',
+        '  .menu-toggle { border: 0; background: #426E50; color: #FFF2D7; border-radius: 10px; padding: 10px 14px; font-weight: 700; cursor: pointer; }',
+        '  .site-nav { display: none; margin-top: 10px; background: #FFF2D7; border-top: 1px solid rgba(66, 110, 80, 0.25); padding-top: 10px; }',
+        '  .site-nav.open { display: flex; flex-direction: column; gap: 8px; }',
+        '  .site-nav a { color: #426E50; text-decoration: none; font-weight: 700; padding: 10px 12px; border-radius: 10px; }',
+        '  .site-nav a:hover { background: rgba(66, 110, 80, 0.10); }',
+        '  .site-nav .altino-mobile-wa { margin-top: 6px; text-align: center; background: #426E50; color: #FFF2D7; }',
+        '}',
+      ].join('\n');
+      document.head.appendChild(style);
+    }
+
+    let shell = nav.querySelector('.altino-mobile-shell');
+    if (!shell) {
+      const links = Array.from(nav.querySelectorAll('a[href]'));
+      const findHref = function(pattern, fallback) {
+        const hit = links.find(function(a) {
+          return pattern.test((a.textContent || '').toLowerCase()) || pattern.test((a.getAttribute('href') || '').toLowerCase());
+        });
+        return hit ? hit.getAttribute('href') : fallback;
+      };
+
+      const hrefInicio = findHref(/inicio|index\.html/, 'index.html');
+      const hrefOrigen = findHref(/origen/, 'origen.html');
+      const hrefCatalogo = findHref(/cat[aá]logo|catalog\.html|catalogo\.html/, 'catalog.html');
+      const hrefContacto = findHref(/contacto|contact\.html|contacto\.html/, 'contact.html');
+      const waLink = links.find(function(a) { return /wa\.me/i.test(a.href || ''); });
+      const hrefWa = waLink ? waLink.href : 'https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino';
+
+      shell = document.createElement('div');
+      shell.className = 'altino-mobile-shell';
+      shell.innerHTML =
+        '<div class="altino-mobile-top">' +
+        '<a class="altino-mobile-brand" href="' + hrefInicio + '">Altino</a>' +
+        '<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="altino-mobile-menu">Menu</button>' +
+        '</div>' +
+        '<div id="altino-mobile-menu" class="site-nav" role="navigation" aria-label="Principal">' +
+        '<a href="' + hrefInicio + '">Inicio</a>' +
+        '<a href="' + hrefOrigen + '">Origen</a>' +
+        '<a href="' + hrefCatalogo + '">Catalogo</a>' +
+        '<a href="' + hrefContacto + '">Contacto</a>' +
+        '<a class="altino-mobile-wa" href="' + hrefWa + '" target="_blank" rel="noopener">Pedir por WhatsApp</a>' +
+        '</div>';
+      nav.appendChild(shell);
+
+      const btn = shell.querySelector('.menu-toggle');
+      const panel = shell.querySelector('.site-nav');
+      btn.addEventListener('click', function() {
+        const open = panel.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      panel.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          panel.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    return true;
+  }
+
+  (function ensurePatchedNav(attempt) {
+    if (patchLocalResponsiveNav()) return;
+    if (attempt < 30) {
+      setTimeout(function() { ensurePatchedNav(attempt + 1); }, 150);
+    }
+  })(0);
+
   // Error sink persists across replaceWith since it's on window, not the DOM.
   window.addEventListener('error', function(e) {
     var p = document.body || document.documentElement;
@@ -151,6 +234,13 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (window.Babel && typeof window.Babel.transformScriptTags === 'function') {
       window.Babel.transformScriptTags();
     }
+
+    (function ensurePatchedNavAfterRender(attempt) {
+      if (patchLocalResponsiveNav()) return;
+      if (attempt < 30) {
+        setTimeout(function() { ensurePatchedNavAfterRender(attempt + 1); }, 150);
+      }
+    })(0);
   } catch (err) {
     setStatus('Error unpacking: ' + err.message);
     console.error('Bundle unpack error:', err);

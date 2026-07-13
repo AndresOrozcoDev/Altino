@@ -47,6 +47,9 @@
   .altino-mobile-panel{display:none;flex-direction:column;gap:4px;margin-top:10px;padding:10px 0 0;border-top:1px solid rgba(66,110,80,0.15);}
   .altino-mobile-link{text-decoration:none;color:#426E50;font-weight:700;font-size:1rem;padding:10px 2px;}
   .altino-mobile-wa{text-decoration:none;text-align:center;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.95rem;padding:12px;border-radius:9999px;margin-top:8px;}
+  .altino-field{font-family:'Nunito',sans-serif;font-size:1rem;font-weight:500;color:#2C2C2C;padding:12px 14px;border-radius:10px;background:#FFF9EC;outline:none;border:1.5px solid rgba(66,110,80,0.25);}
+  .altino-field-error{border-color:#981915;}
+  .altino-field:focus-visible{border-color:#426E50;}
   @media (max-width: 900px){
     .altino-nav-inner{padding:12px 16px;flex-wrap:wrap;align-items:center;}
     .altino-brand img{height:48px;}
@@ -110,12 +113,12 @@
             <h2 style="margin:0;font-size:1.5rem;font-weight:800;color:#426E50;">Envíanos un mensaje</h2>
 
             <label style="display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:700;color:#59614D;">Nombre completo *
-              <input type="text" name="nombre" value="{{ nombre }}" onChange="{{ onNombre }}" placeholder="Tu nombre" style="font-family:'Nunito',sans-serif;font-size:1rem;font-weight:500;color:#2C2C2C;padding:12px 14px;border:1.5px solid {{ nombreBorder }};border-radius:10px;background:#FFF9EC;outline:none;" style-focus="border-color:#426E50;"/>
+              <input type="text" name="nombre" value="{{ nombre }}" onChange="{{ onNombre }}" placeholder="Tu nombre" class="{{ nombreInputClass }}"/>
               <sc-if value="{{ errNombre }}" hint-placeholder-val="{{ false }}"><span style="font-size:.78rem;font-weight:600;color:#981915;">Por favor ingresa tu nombre.</span></sc-if>
             </label>
 
             <label style="display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:700;color:#59614D;">Correo electrónico *
-              <input type="email" name="correo" value="{{ correo }}" onChange="{{ onCorreo }}" placeholder="tucorreo@ejemplo.com" style="font-family:'Nunito',sans-serif;font-size:1rem;font-weight:500;color:#2C2C2C;padding:12px 14px;border:1.5px solid {{ correoBorder }};border-radius:10px;background:#FFF9EC;outline:none;" style-focus="border-color:#426E50;"/>
+              <input type="email" name="correo" value="{{ correo }}" onChange="{{ onCorreo }}" placeholder="tucorreo@ejemplo.com" class="{{ correoInputClass }}"/>
               <sc-if value="{{ errCorreo }}" hint-placeholder-val="{{ false }}"><span style="font-size:.78rem;font-weight:600;color:#981915;">Ingresa un correo válido.</span></sc-if>
             </label>
 
@@ -124,7 +127,7 @@
             </label>
 
             <label style="display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:700;color:#59614D;">Mensaje *
-              <textarea name="mensaje" rows="4" value="{{ mensaje }}" onChange="{{ onMensaje }}" placeholder="Cuéntanos qué necesitas..." style="font-family:'Nunito',sans-serif;font-size:1rem;font-weight:500;color:#2C2C2C;padding:12px 14px;border:1.5px solid {{ mensajeBorder }};border-radius:10px;background:#FFF9EC;outline:none;resize:vertical;"></textarea>
+              <textarea name="mensaje" rows="4" value="{{ mensaje }}" onChange="{{ onMensaje }}" placeholder="Cuéntanos qué necesitas..." class="{{ mensajeInputClass }}" style="resize:vertical;"></textarea>
               <sc-if value="{{ errMensaje }}" hint-placeholder-val="{{ false }}"><span style="font-size:.78rem;font-weight:600;color:#981915;">Escribe un mensaje.</span></sc-if>
             </label>
 
@@ -243,14 +246,14 @@ class Component extends DCLogic {
     const s = this.state;
     const errs = this.validate();
     const showErr = (k) => s.touched && errs[k];
-    const border = (k) => (s.touched && errs[k] ? '#981915' : 'rgba(66,110,80,0.25)');
+    const fieldClass = (k) => (s.touched && errs[k] ? 'altino-field altino-field-error' : 'altino-field');
     const set = (k) => (e) => this.setState({ [k]: e.target.value });
     return {
       nombre: s.nombre, correo: s.correo, telefono: s.telefono, mensaje: s.mensaje,
       esDistribuidor: s.esDistribuidor,
       submitted: s.submitted, notSubmitted: !s.submitted,
       errNombre: showErr('nombre'), errCorreo: showErr('correo'), errMensaje: showErr('mensaje'),
-      nombreBorder: border('nombre'), correoBorder: border('correo'), mensajeBorder: border('mensaje'),
+      nombreInputClass: fieldClass('nombre'), correoInputClass: fieldClass('correo'), mensajeInputClass: fieldClass('mensaje'),
       composedWa: this.compose(),
       onNombre: set('nombre'), onCorreo: set('correo'), onTelefono: set('telefono'), onMensaje: set('mensaje'),
       onToggle: (e) => this.setState({ esDistribuidor: e.target.checked }),

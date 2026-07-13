@@ -47,6 +47,22 @@
   .altino-mobile-panel{display:none;flex-direction:column;gap:4px;margin-top:10px;padding:10px 0 0;border-top:1px solid rgba(66,110,80,0.15);}
   .altino-mobile-link{text-decoration:none;color:#426E50;font-weight:700;font-size:1rem;padding:10px 2px;}
   .altino-mobile-wa{text-decoration:none;text-align:center;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.95rem;padding:12px;border-radius:9999px;margin-top:8px;}
+  .origen-ficha-section{max-width:1100px;margin:0 auto;padding:96px 24px;}
+  .origen-ficha-shell{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(145deg,#2f5a43 0%,#426E50 62%,#54745e 100%);padding:44px 28px 36px;box-shadow:0 22px 42px rgba(38,62,46,0.24);isolation:isolate;}
+  .origen-ficha-shell::before{content:'';position:absolute;left:0;right:0;top:0;height:52%;background-image:url('assets/update.jpeg');background-size:cover;background-position:center top;opacity:.26;filter:saturate(.62) contrast(1.06);z-index:0;}
+  .origen-ficha-shell::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(30,51,40,0.34) 0%,rgba(30,51,40,0.08) 48%,rgba(30,51,40,0.32) 100%);z-index:0;}
+  .origen-ficha-pack{position:absolute;left:0;right:0;bottom:0;height:170px;background-image:url('assets/update.jpeg');background-size:cover;background-position:center bottom;opacity:.28;filter:grayscale(.1) contrast(1.05);z-index:1;pointer-events:none;}
+  .origen-ficha-head{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+  .origen-ficha-kicker{font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,242,215,0.75);}
+  .origen-ficha-title{margin:0;font-size:clamp(1.85rem,4.1vw,2.6rem);font-weight:800;line-height:1.12;color:#FFF2D7;text-wrap:balance;}
+  .origen-ficha-card{position:relative;z-index:2;max-width:840px;margin:0 auto;padding:12px;background:rgba(255,242,215,0.08);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);border-radius:20px;border:1px solid rgba(255,242,215,0.24);box-shadow:0 10px 24px rgba(24,42,31,0.16);}
+  .origen-ficha-row{display:grid;grid-template-columns:minmax(150px,235px) minmax(0,1fr);gap:8px 22px;align-items:center;padding:16px 20px;border-bottom:1px solid rgba(255,242,215,0.18);background:linear-gradient(120deg,rgba(255,242,215,0.025),rgba(255,242,215,0.01));}
+  .origen-ficha-row:last-child{border-bottom:none;}
+  .origen-ficha-k{font-size:.95rem;font-weight:800;color:#FFF2D7;letter-spacing:.01em;}
+  .origen-ficha-v{font-size:.98rem;font-weight:600;color:rgba(255,242,215,0.96);text-align:right;line-height:1.45;}
+  .origen-ficha-cta{position:relative;z-index:2;text-align:center;margin-top:30px;}
+  .origen-ficha-cta a{text-decoration:none;background:#FFF2D7;color:#35583f;font-weight:800;font-size:1rem;padding:14px 28px;border-radius:9999px;display:inline-block;box-shadow:0 6px 16px rgba(20,36,27,0.18);transition:transform .2s ease,background .2s ease,color .2s ease;}
+  .origen-ficha-cta a:hover{transform:translateY(-1px);background:#f5e2bb;color:#24402f;}
   @media (max-width: 900px){
     .altino-nav-inner{padding:12px 16px;flex-wrap:wrap;align-items:center;}
     .altino-brand img{height:48px;}
@@ -54,6 +70,12 @@
     .altino-mobile{display:block;margin-left:auto;}
     .altino-mobile-panel{flex-basis:100%;width:100%;}
     .altino-mobile[open] + .altino-mobile-panel{display:flex;}
+    .origen-ficha-shell{padding:36px 16px 26px;border-radius:22px;}
+    .origen-ficha-pack{height:130px;opacity:.24;}
+    .origen-ficha-card{padding:8px;border-radius:16px;}
+    .origen-ficha-row{grid-template-columns:1fr;gap:4px;padding:13px 12px;}
+    .origen-ficha-v{text-align:left;}
+    .origen-ficha-cta a{width:100%;max-width:320px;}
   }
 </style>
 </helmet>
@@ -157,21 +179,24 @@
     </section>
 
     <!-- FICHA TECNICA -->
-    <section data-screen-label="Ficha" style="max-width:900px;margin:0 auto;padding:96px 24px;">
-      <div style="text-align:center;display:flex;flex-direction:column;gap:10px;margin-bottom:40px;">
-        <span style="font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#981915;">Trazabilidad</span>
-        <h2 style="margin:0;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800;color:#426E50;">Ficha técnica del origen</h2>
-      </div>
-      <div style="background:#FFFFFF;border-radius:16px;border:1px solid rgba(66,110,80,0.12);box-shadow:0 2px 12px rgba(0,0,0,0.05);overflow:hidden;">
-        <sc-for list="{{ ficha }}" as="row" hint-placeholder-count="7">
-          <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:18px 28px;border-bottom:1px solid rgba(66,110,80,0.10);">
-            <span style="font-size:.95rem;font-weight:700;color:#59614D;letter-spacing:.02em;">{{ row.k }}</span>
-            <span style="font-size:.98rem;font-weight:500;color:#2C2C2C;text-align:right;">{{ row.v }}</span>
-          </div>
-        </sc-for>
-      </div>
-      <div style="text-align:center;margin-top:36px;">
-        <a href="catalogo.html" style="text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:1.02rem;padding:15px 30px;border-radius:9999px;transition:background .2s ease;" style-hover="background:#59614D;">Conoce nuestros cafés →</a>
+    <section data-screen-label="Ficha" class="origen-ficha-section">
+      <div class="origen-ficha-shell">
+        <div class="origen-ficha-pack" aria-hidden="true"></div>
+        <div class="origen-ficha-head">
+          <span class="origen-ficha-kicker">Trazabilidad</span>
+          <h2 class="origen-ficha-title">Ficha técnica del origen</h2>
+        </div>
+        <div class="origen-ficha-card">
+          <sc-for list="{{ ficha }}" as="row" hint-placeholder-count="7">
+            <div class="origen-ficha-row">
+              <span class="origen-ficha-k">{{ row.k }}</span>
+              <span class="origen-ficha-v">{{ row.v }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div class="origen-ficha-cta">
+          <a href="catalogo.html">Conoce nuestros cafés →</a>
+        </div>
       </div>
     </section>
   </main>

@@ -1378,6 +1378,116 @@
   var REACT_SRI = "sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z";
   var REACT_DOM_URL = "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js";
   var REACT_DOM_SRI = "sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1";
+  function installPageSkeleton() {
+    const root = document.documentElement;
+    root.classList.add("altino-loading");
+    const style = document.createElement("style");
+    style.id = "altino-skeleton-style";
+    style.textContent = `
+      @keyframes altino-skeleton-shine {
+        0% { transform: translateX(-120%); }
+        100% { transform: translateX(120%); }
+      }
+      #altino-page-skeleton {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+        background: #fff2d7;
+        padding: 16px;
+        display: grid;
+        grid-template-rows: 84px 230px 1fr;
+        gap: 16px;
+        pointer-events: all;
+      }
+      #altino-page-skeleton.is-hiding {
+        opacity: 0;
+        transition: opacity .2s ease;
+      }
+      #altino-page-skeleton .sk-block {
+        position: relative;
+        background: rgba(66,110,80,.11);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      #altino-page-skeleton .sk-block::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -30%;
+        width: 30%;
+        background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.62), rgba(255,255,255,0));
+        animation: altino-skeleton-shine 1.15s ease-in-out infinite;
+      }
+      #altino-page-skeleton .sk-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+      #altino-page-skeleton .sk-card {
+        position: relative;
+        background: rgba(66,110,80,.11);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      #altino-page-skeleton .sk-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -30%;
+        width: 30%;
+        background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.62), rgba(255,255,255,0));
+        animation: altino-skeleton-shine 1.15s ease-in-out infinite;
+      }
+      @media (max-width: 900px) {
+        #altino-page-skeleton {
+          grid-template-rows: 72px 180px 1fr;
+          gap: 12px;
+          padding: 12px;
+        }
+        #altino-page-skeleton .sk-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    const mount = () => {
+      if (document.getElementById("altino-page-skeleton")) return;
+      const overlay = document.createElement("div");
+      overlay.id = "altino-page-skeleton";
+      overlay.setAttribute("aria-hidden", "true");
+      overlay.innerHTML = `
+        <div class="sk-block"></div>
+        <div class="sk-block"></div>
+        <div class="sk-grid">
+          <div class="sk-card"></div>
+          <div class="sk-card"></div>
+          <div class="sk-card"></div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+    };
+    if (document.body) mount();
+    else document.addEventListener("DOMContentLoaded", mount, { once: true });
+    let done = false;
+    const hide = () => {
+      if (done) return;
+      done = true;
+      root.classList.remove("altino-loading");
+      const overlay = document.getElementById("altino-page-skeleton");
+      if (overlay) {
+        overlay.classList.add("is-hiding");
+        setTimeout(() => overlay.remove(), 220);
+      }
+      setTimeout(() => {
+        const skeletonStyle = document.getElementById("altino-skeleton-style");
+        if (skeletonStyle) skeletonStyle.remove();
+      }, 260);
+    };
+    window.addEventListener("load", hide, { once: true });
+    setTimeout(hide, 9e3);
+  }
   function hideRawTemplate() {
     const s = document.createElement("style");
     s.textContent = "x-dc{display:none!important}";
@@ -1458,6 +1568,7 @@
     if (document.readyState !== "loading") api.__dcBoot();
     else document.addEventListener("DOMContentLoaded", () => api.__dcBoot());
   }
+  installPageSkeleton();
   hideRawTemplate();
   loadReactUmd().then(init).catch((err) => {
     console.error("[dc] failed to load React or boot:", err);

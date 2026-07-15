@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -32,69 +32,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
-<style>
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{margin:0;background:#FFF2D7;overflow-x:hidden;}
-  a:focus-visible,button:focus-visible{outline:3px solid #981915;outline-offset:2px;border-radius:6px;}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
-  .altino-header{position:sticky;top:0;z-index:50;font-family:'Nunito',sans-serif;}
-  .altino-nav{background:#FFF2D7;box-shadow:0 1px 0 rgba(66,110,80,0.08);}
-  .altino-nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
-  .altino-brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
-  .altino-brand img{height:60px;width:auto;display:block;}
-  .altino-links{display:flex;align-items:center;gap:8px;}
-  .altino-link{position:relative;text-decoration:none;color:#59614D;font-weight:600;font-size:.95rem;padding:8px 14px;border-radius:9999px;transition:color .2s ease;}
-  .altino-link-active{color:#426E50;font-weight:700;}
-  .altino-link-active::after{content:'';position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:#981915;border-radius:2px;}
-  .altino-wa{margin-left:8px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.92rem;padding:10px 20px;border-radius:9999px;white-space:nowrap;}
-  .altino-mobile{display:none;}
-  .altino-mobile summary{list-style:none;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:#426E50;padding:8px 4px;cursor:pointer;border:none;}
-  .altino-mobile summary::-webkit-details-marker{display:none;}
-  .altino-mobile summary::marker{display:none;}
-  .menu-label-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
-  .menu-icon{width:26px;height:18px;display:inline-flex;flex-direction:column;justify-content:space-between;}
-  .menu-icon span{display:block;width:100%;height:2.5px;background:#426E50;border-radius:2px;transform-origin:center;transition:transform .25s ease,opacity .2s ease;}
-  .altino-mobile[open] .menu-icon span:nth-child(1){transform:translateY(7.8px) rotate(45deg);}
-  .altino-mobile[open] .menu-icon span:nth-child(2){opacity:0;}
-  .altino-mobile[open] .menu-icon span:nth-child(3){transform:translateY(-7.8px) rotate(-45deg);}
-  .altino-mobile-panel{display:none;flex-direction:column;gap:4px;margin-top:10px;padding:10px 0 0;border-top:1px solid rgba(66,110,80,0.15);}
-  .altino-mobile-link{text-decoration:none;color:#426E50;font-weight:700;font-size:1rem;padding:10px 2px;}
-  .altino-mobile-wa{text-decoration:none;text-align:center;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.95rem;padding:12px;border-radius:9999px;margin-top:8px;}
-  .origen-ficha-section{max-width:1100px;margin:0 auto;padding:96px 24px;}
-  .origen-ficha-shell{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(145deg,#2f5a43 0%,#426E50 62%,#54745e 100%);padding:44px 28px 36px;box-shadow:0 22px 42px rgba(38,62,46,0.24);isolation:isolate;}
-  .origen-ficha-shell::before{content:'';position:absolute;left:0;right:0;top:0;height:52%;background-image:url('assets/update.jpeg');background-size:cover;background-position:center top;opacity:.26;filter:saturate(.62) contrast(1.06);z-index:0;}
-  .origen-ficha-shell::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(30,51,40,0.34) 0%,rgba(30,51,40,0.08) 48%,rgba(30,51,40,0.32) 100%);z-index:0;}
-  .origen-ficha-pack{position:absolute;left:0;right:0;bottom:0;height:170px;background-image:url('assets/update.jpeg');background-size:cover;background-position:center bottom;opacity:.28;filter:grayscale(.1) contrast(1.05);z-index:1;pointer-events:none;}
-  .origen-ficha-head{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
-  .origen-ficha-kicker{font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,242,215,0.75);}
-  .origen-ficha-title{margin:0;font-size:clamp(1.85rem,4.1vw,2.6rem);font-weight:800;line-height:1.12;color:#FFF2D7;text-wrap:balance;}
-  .origen-ficha-card{position:relative;z-index:2;max-width:840px;margin:0 auto;padding:12px;background:rgba(255,242,215,0.08);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);border-radius:20px;border:1px solid rgba(255,242,215,0.24);box-shadow:0 10px 24px rgba(24,42,31,0.16);}
-  .origen-ficha-row{display:grid;grid-template-columns:minmax(150px,235px) minmax(0,1fr);gap:8px 22px;align-items:center;padding:16px 20px;border-bottom:1px solid rgba(255,242,215,0.18);background:linear-gradient(120deg,rgba(255,242,215,0.025),rgba(255,242,215,0.01));}
-  .origen-ficha-row:last-child{border-bottom:none;}
-  .origen-ficha-k{font-size:.95rem;font-weight:800;color:#FFF2D7;letter-spacing:.01em;}
-  .origen-ficha-v{font-size:.98rem;font-weight:600;color:rgba(255,242,215,0.96);text-align:right;line-height:1.45;}
-  .origen-ficha-cta{position:relative;z-index:2;text-align:center;margin-top:30px;}
-  .origen-ficha-cta a{text-decoration:none;background:#FFF2D7;color:#35583f;font-weight:800;font-size:1rem;padding:14px 28px;border-radius:9999px;display:inline-block;box-shadow:0 6px 16px rgba(20,36,27,0.18);transition:transform .2s ease,background .2s ease,color .2s ease;}
-  .origen-ficha-cta a:hover{transform:translateY(-1px);background:#f5e2bb;color:#24402f;}
-  @media (max-width: 900px){
-    .altino-nav-inner{padding:12px 16px;flex-wrap:wrap;align-items:center;}
-    .altino-brand img{height:48px;}
-    .altino-links{display:none;}
-    .altino-mobile{display:block;margin-left:auto;}
-    .altino-mobile-panel{flex-basis:100%;width:100%;}
-    .altino-mobile[open] + .altino-mobile-panel{display:flex;}
-    .origen-ficha-shell{padding:36px 16px 26px;border-radius:22px;}
-    .origen-ficha-pack{height:130px;opacity:.24;}
-    .origen-ficha-card{padding:8px;border-radius:16px;}
-    .origen-ficha-row{grid-template-columns:1fr;gap:4px;padding:13px 12px;}
-    .origen-ficha-v{text-align:left;}
-    .origen-ficha-cta a{width:100%;max-width:320px;}
-  }
-</style>
+
 </helmet>
 
-<div style="font-family:'Nunito',sans-serif;color:#2C2C2C;background:#FFF2D7;">
+<div class="origen__node--0fc6528a">
   <header class="altino-header">
     <nav aria-label="Principal" class="altino-nav">
       <div class="altino-nav-inner">
@@ -127,65 +68,65 @@
 
   <main>
     <!-- HERO -->
-    <section data-screen-label="Origen Hero" style="position:relative;overflow:hidden;background:linear-gradient(150deg,#35583f 0%,#426E50 70%);">
-      <div style="position:absolute;inset:0;background-image:url('assets/background.svg');background-size:cover;background-position:center;opacity:0.34;"></div>
-      <div style="position:relative;max-width:1100px;margin:0 auto;padding:120px 24px 96px;display:flex;flex-direction:column;gap:16px;">
-        <span style="font-size:.82rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,242,215,0.72);">Dabeiba, Antioquia · 1850 MSNM</span>
-        <h1 style="margin:0;font-size:clamp(2.6rem,6vw,4rem);font-weight:800;line-height:1.05;color:#FFF2D7;">Nuestro Origen</h1>
-        <p style="margin:0;max-width:600px;font-size:clamp(1.05rem,2.2vw,1.3rem);line-height:1.6;color:rgba(255,242,215,0.9);">Donde el trabajo duro, la tenacidad y la montaña se encuentran.</p>
+    <section class="origen__node--13fb4fcc" data-screen-label="Origen Hero">
+      <div class="origen__node--e19c9001"></div>
+      <div class="origen__node--14bc0645">
+        <span class="origen__node--d1fbf664">Dabeiba, Antioquia · 1850 MSNM</span>
+        <h1 class="origen__node--507a376c">Nuestro Origen</h1>
+        <p class="origen__node--7fec17bd">Donde el trabajo duro, la tenacidad y la montaña se encuentran.</p>
       </div>
     </section>
 
     <!-- NARRATIVA -->
-    <section data-screen-label="Narrativa" style="max-width:1140px;margin:0 auto;padding:96px 24px;display:flex;flex-direction:column;gap:72px;">
+    <section class="origen__node--b72a7415" data-screen-label="Narrativa">
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;">
-        <div style="display:flex;flex-direction:column;gap:14px;">
-          <span style="font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#981915;">El lugar</span>
-          <h2 style="margin:0;font-size:clamp(1.7rem,3.4vw,2.2rem);font-weight:800;color:#426E50;line-height:1.15;">Las laderas del Nudo del Paramillo</h2>
-          <p style="margin:0;font-size:1.05rem;line-height:1.75;color:#3a3a3a;">Altino nace en las laderas del Nudo del Paramillo, a 1850 m s. n. m., un ecosistema estratégico en Dabeiba, Antioquia, que nos exige una caficultura de alta precisión y un respeto absoluto por el entorno. Nuestro café une biodiversidad, historia y resiliencia a través de tres orígenes locales: en el corregimiento San José de Urama (vereda Charrascal) cosechamos en las fincas Los Socios y Villa Consuelo, de la mano del productor Aicardo López; y en la vereda El Pital, cultivamos en la finca La Chiquita junto al productor Oscar Álvarez.</p>
+      <div class="origen__node--26df79cc">
+        <div class="origen__node--f70e2f80">
+          <span class="origen__node--aa8ef238">El lugar</span>
+          <h2 class="origen__node--0f411d33">Las laderas del Nudo del Paramillo</h2>
+          <p class="origen__node--1198d951">Altino nace en las laderas del Nudo del Paramillo, a 1850 m s. n. m., un ecosistema estratégico en Dabeiba, Antioquia, que nos exige una caficultura de alta precisión y un respeto absoluto por el entorno. Nuestro café une biodiversidad, historia y resiliencia a través de tres orígenes locales: en el corregimiento San José de Urama (vereda Charrascal) cosechamos en las fincas Los Socios y Villa Consuelo, de la mano del productor Aicardo López; y en la vereda El Pital, cultivamos en la finca La Chiquita junto al productor Oscar Álvarez.</p>
         </div>
-        <div style="position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#59614D;background-image:url('assets/topo-cream.svg');background-size:cover;background-position:center;box-shadow:0 8px 32px rgba(66,110,80,0.18);">
-          <div style="position:absolute;inset:0;background:linear-gradient(150deg,rgba(66,110,80,0.45),rgba(89,97,77,0.65));"></div>
-          <span style="position:absolute;left:16px;bottom:16px;font-family:'Courier New',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,242,215,0.85);">[ foto · cafetal entre montañas ]</span>
+        <div class="origen__node--23e81a54">
+          <div class="origen__node--7b2cbcea"></div>
+          <span class="origen__node--d4553c19">[ foto · cafetal entre montañas ]</span>
         </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;direction:rtl;">
-        <div style="position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#426E50;background-image:url('assets/topo-cream.svg');background-size:cover;background-position:center;box-shadow:0 8px 32px rgba(66,110,80,0.18);direction:ltr;">
-          <div style="position:absolute;inset:0;background:linear-gradient(150deg,rgba(66,110,80,0.45),rgba(89,97,77,0.65));"></div>
-          <span style="position:absolute;left:16px;bottom:16px;font-family:'Courier New',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,242,215,0.85);">[ foto · manos del caficultor ]</span>
+      <div class="origen__node--7e827a74">
+        <div class="origen__node--67598f25">
+          <div class="origen__node--7b2cbcea"></div>
+          <span class="origen__node--d4553c19">[ foto · manos del caficultor ]</span>
         </div>
-        <div style="display:flex;flex-direction:column;gap:14px;direction:ltr;">
-          <span style="font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#981915;">La finca</span>
-          <h2 style="margin:0;font-size:clamp(1.7rem,3.4vw,2.2rem);font-weight:800;color:#426E50;line-height:1.15;">Finca Los Socios</h2>
-          <p style="margin:0;font-size:1.05rem;line-height:1.75;color:#3a3a3a;">En nuestra casa matriz cultivamos con rigor técnico variedades que cuentan la historia de la caficultura colombiana: Castillo, Caturra, Colombia, Marsellesa y Cenicafé 1. Esta diversidad de perfiles, unida a la altitud, nos permite entregar un café de suavidad excepcional y alta calidad sensorial.<br><br>Finca Villa Consuelo: Un origen que rinde homenaje a la tradición de la montaña a través del cultivo meticuloso de las variedades Colombia, Castillo y Caturra, logrando un balance perfecto en taza.<br><br>Finca La Chiquita: El escenario de la innovación y la adaptación, donde la altitud recibe a las variedades Etíope, Cenicafé y Colombia, entregando perfiles únicos y diferenciados.<br><br>Tres fincas donde el trabajo duro, la tenacidad y la geografía de Dabeiba se encuentran para crear un café extraordinario.</p>
+        <div class="origen__node--b765788e">
+          <span class="origen__node--aa8ef238">La finca</span>
+          <h2 class="origen__node--0f411d33">Finca Los Socios</h2>
+          <p class="origen__node--1198d951">En nuestra casa matriz cultivamos con rigor técnico variedades que cuentan la historia de la caficultura colombiana: Castillo, Caturra, Colombia, Marsellesa y Cenicafé 1. Esta diversidad de perfiles, unida a la altitud, nos permite entregar un café de suavidad excepcional y alta calidad sensorial.<br><br>Finca Villa Consuelo: Un origen que rinde homenaje a la tradición de la montaña a través del cultivo meticuloso de las variedades Colombia, Castillo y Caturra, logrando un balance perfecto en taza.<br><br>Finca La Chiquita: El escenario de la innovación y la adaptación, donde la altitud recibe a las variedades Etíope, Cenicafé y Colombia, entregando perfiles únicos y diferenciados.<br><br>Tres fincas donde el trabajo duro, la tenacidad y la geografía de Dabeiba se encuentran para crear un café extraordinario.</p>
         </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px;">
-        <div style="display:flex;flex-direction:column;gap:14px;padding:32px;background:#FFFFFF;border-radius:16px;border:1px solid rgba(66,110,80,0.12);box-shadow:0 2px 12px rgba(0,0,0,0.05);">
-          <span style="font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#981915;">El nombre</span>
-          <h2 style="margin:0;font-size:clamp(1.5rem,3vw,1.9rem);font-weight:800;color:#426E50;">Altitud + Nobleza</h2>
-          <p style="margin:0;font-size:1.02rem;line-height:1.7;color:#3a3a3a;">El nombre Altino nace de la unión de dos conceptos que nos definen: la altitud de nuestras montañas, que otorga a nuestro café una suavidad y calidad sensorial superior, y la nobleza de nuestra gente.</p>
+      <div class="origen__node--63c37cae">
+        <div class="origen__node--f7b6c355">
+          <span class="origen__node--aa8ef238">El nombre</span>
+          <h2 class="origen__node--1a462fb1">Altitud + Nobleza</h2>
+          <p class="origen__node--596011ff">El nombre Altino nace de la unión de dos conceptos que nos definen: la altitud de nuestras montañas, que otorga a nuestro café una suavidad y calidad sensorial superior, y la nobleza de nuestra gente.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:14px;padding:32px;background:#426E50;border-radius:16px;box-shadow:0 8px 32px rgba(66,110,80,0.18);position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;background-image:url('assets/topo-cream.svg');background-size:cover;opacity:0.12;"></div>
-          <span style="position:relative;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,242,215,0.7);">El compromiso</span>
-          <h2 style="position:relative;margin:0;font-size:clamp(1.5rem,3vw,1.9rem);font-weight:800;color:#FFF2D7;">Dignificar el campo</h2>
-          <p style="position:relative;margin:0;font-size:1.02rem;line-height:1.7;color:rgba(255,242,215,0.92);">Dabeiba no es solo el lugar donde crecemos; es el suelo que nos permite demostrar que el café es, ante todo, un lazo que nos une con quienes lo producen y con la naturaleza que nos da la vida. Transformamos la resiliencia de Dabeiba en un café de alta montaña con compromiso ambiental y social.</p>
+        <div class="origen__node--4e58b994">
+          <div class="origen__node--8662c229"></div>
+          <span class="origen__node--790c9c3c">El compromiso</span>
+          <h2 class="origen__node--66bff95a">Dignificar el campo</h2>
+          <p class="origen__node--ea329389">Dabeiba no es solo el lugar donde crecemos; es el suelo que nos permite demostrar que el café es, ante todo, un lazo que nos une con quienes lo producen y con la naturaleza que nos da la vida. Transformamos la resiliencia de Dabeiba en un café de alta montaña con compromiso ambiental y social.</p>
         </div>
       </div>
     </section>
 
     <!-- STATS -->
-    <section data-screen-label="Datos" style="background:#f4e6c4;padding:80px 0;">
-      <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;text-align:center;">
+    <section class="origen__node--7f3a8fe6" data-screen-label="Datos">
+      <div class="origen__node--794e41f9">
+        <div class="origen__node--47848897">
           <sc-for list="{{ stats }}" as="st" hint-placeholder-count="4">
-            <div style="display:flex;flex-direction:column;gap:6px;padding:16px;">
-              <span style="font-size:clamp(2.4rem,5vw,3.2rem);font-weight:800;color:#426E50;line-height:1;">{{ st.value }}</span>
-              <span style="font-size:.9rem;font-weight:600;color:#59614D;letter-spacing:.04em;">{{ st.label }}</span>
+            <div class="origen__node--99f65fea">
+              <span class="origen__node--8e259be5">{{ st.value }}</span>
+              <span class="origen__node--c9b7bb3d">{{ st.label }}</span>
             </div>
           </sc-for>
         </div>
@@ -215,38 +156,38 @@
     </section>
   </main>
 
-  <footer style="position:relative;overflow:hidden;background:#426E50;color:#FFF2D7;font-family:'Nunito',sans-serif;">
-    <div style="position:absolute;inset:0;background-image:url('assets/background.svg');background-size:cover;background-position:center center;opacity:0.16;pointer-events:none;"></div>
-    <div style="position:relative;max-width:1200px;margin:0 auto;padding:64px 24px 32px;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px 32px;">
-        <div style="display:flex;flex-direction:column;gap:16px;max-width:300px;">
-          <img src="assets/AF_LOGO%20CAFE%20ALTINO_beige.png" alt="Altino Cafe Noble - Aroma del Paramillo" style="width:150px;height:auto;display:block;" />
-          <p style="margin:0;font-size:.9rem;line-height:1.7;color:rgba(255,242,215,0.82);">Dabeiba, Antioquia, Colombia.<br>1850 MSNM - Nudo del Paramillo.</p>
+  <footer class="origen__node--73a7467d">
+    <div class="origen__node--e19df6da"></div>
+    <div class="origen__node--ce59ea5c">
+      <div class="origen__node--e09e77db">
+        <div class="origen__node--c276d821">
+          <img class="origen__node--9674a507" src="assets/AF_LOGO%20CAFE%20ALTINO_beige.png" alt="Altino Cafe Noble - Aroma del Paramillo" />
+          <p class="origen__node--d2012c13">Dabeiba, Antioquia, Colombia.<br>1850 MSNM - Nudo del Paramillo.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <h4 style="margin:0 0 4px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,242,215,0.6);">Navegación</h4>
-          <a href="index.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Inicio</a>
-          <a href="origen.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Origen</a>
-          <a href="catalogo.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Catálogo</a>
-          <a href="contacto.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Contacto</a>
-          <a href="legal.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Términos y Privacidad</a>
+        <div class="origen__node--25ae862b">
+          <h4 class="origen__node--a1b2729f">Navegación</h4>
+          <a class="origen__node--1ba347d2" href="index.html">Inicio</a>
+          <a class="origen__node--1ba347d2" href="origen.html">Origen</a>
+          <a class="origen__node--1ba347d2" href="catalogo.html">Catálogo</a>
+          <a class="origen__node--1ba347d2" href="contacto.html">Contacto</a>
+          <a class="origen__node--1ba347d2" href="legal.html">Términos y Privacidad</a>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <h4 style="margin:0 0 4px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,242,215,0.6);">Contacto</h4>
-          <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;display:inline-flex;align-items:center;gap:8px;" style-hover="color:#fff;">✆ (+57) 313 711 9699</a>
-          <a href="https://instagram.com/altino.cafe" target="_blank" rel="noopener" aria-label="Instagram de Altino" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;display:inline-flex;align-items:center;gap:8px;" style-hover="color:#fff;">◎ @altino.cafe</a>
-          <span style="font-size:.95rem;color:rgba(255,242,215,0.82);display:inline-flex;align-items:center;gap:8px;">⌖ Dabeiba, Antioquia</span>
+        <div class="origen__node--25ae862b">
+          <h4 class="origen__node--a1b2729f">Contacto</h4>
+          <a class="origen__node--8509b6b8" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><img src="assets/icon-whatsapp.png" class="altino-icon-png" alt="" aria-hidden="true" /> (+57) 313 711 9699</a>
+          <a class="origen__node--8509b6b8" href="https://instagram.com/altino.cafe" target="_blank" rel="noopener" aria-label="Instagram de Altino"><img src="assets/icon-instagram.png" class="altino-icon-png" alt="" aria-hidden="true" /> @altino.cafe</a>
+          <span class="origen__node--6385c311"><img src="assets/icon-ubicacion.png" class="altino-icon-png" alt="" aria-hidden="true" /> Dabeiba, Antioquia</span>
         </div>
-        <div style="display:flex;flex-direction:column;gap:14px;max-width:260px;">
-          <h4 style="margin:0;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,242,215,0.6);">Distribuidores</h4>
-          <p style="margin:0;font-size:.9rem;line-height:1.6;color:rgba(255,242,215,0.82);font-weight:600;">¿Haces crecer tu negocio con café de calidad?</p>
-          <p style="margin:0;font-size:.9rem;line-height:1.6;color:rgba(255,242,215,0.82);">Tenemos precios especiales para distribuidores y cafeterías. Escríbenos y recibe nuestro catálogo exclusivo.</p>
-          <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20ser%20distribuidor%20de%20Altino" target="_blank" rel="noopener" style="text-decoration:none;text-align:center;background:#981915;color:#FFF2D7;font-weight:700;font-size:.9rem;padding:11px 18px;border-radius:9999px;transition:transform .2s ease, filter .2s ease;" style-hover="transform:translateY(-1px);filter:brightness(1.08);">Quiero ser distribuidor →</a>
+        <div class="origen__node--f85c1751">
+          <h4 class="origen__node--6b9ee9ca">Distribuidores</h4>
+          <p class="origen__node--466fb138">¿Haces crecer tu negocio con café de calidad?</p>
+          <p class="origen__node--f158b208">Tenemos precios especiales para distribuidores y cafeterías. Escríbenos y recibe nuestro catálogo exclusivo.</p>
+          <a class="origen__node--78d0cd8d" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20ser%20distribuidor%20de%20Altino" target="_blank" rel="noopener">Quiero ser distribuidor →</a>
         </div>
       </div>
-      <div style="margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,242,215,0.18);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">
-        <span style="font-size:.82rem;color:rgba(255,242,215,0.65);">© 2025 Altino Café Noble. Todos los derechos reservados.</span>
-        <span style="font-size:.82rem;color:rgba(255,242,215,0.65);font-style:italic;">Aroma del Paramillo</span>
+      <div class="origen__node--3a3c7795">
+        <span class="origen__node--0f57465a">© 2025 Altino Café Noble. Todos los derechos reservados.</span>
+        <span class="origen__node--024c8ee1">Aroma del Paramillo</span>
       </div>
     </div>
   </footer>
@@ -276,3 +217,5 @@ class Component extends DCLogic {
 </script>
 </body>
 </html>
+
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -25,58 +25,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
-<style>
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{margin:0;background:#FFF2D7;overflow-x:hidden;}
-  a:focus-visible,button:focus-visible{outline:3px solid #981915;outline-offset:2px;border-radius:6px;}
-  .altino-header{position:sticky;top:0;z-index:50;font-family:'Nunito',sans-serif;}
-  .altino-nav{background:#FFF2D7;box-shadow:0 1px 0 rgba(66,110,80,0.08);}
-  .altino-nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
-  .altino-brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
-  .altino-brand img{height:60px;width:auto;display:block;}
-  .altino-links{display:flex;align-items:center;gap:8px;}
-  .altino-link{position:relative;text-decoration:none;color:#59614D;font-weight:600;font-size:.95rem;padding:8px 14px;border-radius:9999px;transition:color .2s ease;}
-  .altino-link-active{color:#426E50;font-weight:700;}
-  .altino-link-active::after{content:'';position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:#981915;border-radius:2px;}
-  .altino-wa{margin-left:8px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.92rem;padding:10px 20px;border-radius:9999px;white-space:nowrap;}
-  .altino-mobile{display:none;}
-  .altino-mobile summary{list-style:none;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:#426E50;padding:8px 4px;cursor:pointer;border:none;}
-  .altino-mobile summary::-webkit-details-marker{display:none;}
-  .altino-mobile summary::marker{display:none;}
-  .menu-label-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
-  .menu-icon{width:26px;height:18px;display:inline-flex;flex-direction:column;justify-content:space-between;}
-  .menu-icon span{display:block;width:100%;height:2.5px;background:#426E50;border-radius:2px;transform-origin:center;transition:transform .25s ease,opacity .2s ease;}
-  .altino-mobile[open] .menu-icon span:nth-child(1){transform:translateY(7.8px) rotate(45deg);}
-  .altino-mobile[open] .menu-icon span:nth-child(2){opacity:0;}
-  .altino-mobile[open] .menu-icon span:nth-child(3){transform:translateY(-7.8px) rotate(-45deg);}
-  .altino-mobile-panel{display:none;flex-direction:column;gap:4px;margin-top:10px;padding:10px 0 0;border-top:1px solid rgba(66,110,80,0.15);}
-  .altino-mobile-link{text-decoration:none;color:#426E50;font-weight:700;font-size:1rem;padding:10px 2px;}
-  .altino-mobile-wa{text-decoration:none;text-align:center;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.95rem;padding:12px;border-radius:9999px;margin-top:8px;}
-  .legal-wrap{max-width:1120px;margin:0 auto;padding:72px 24px 96px;font-family:'Nunito',sans-serif;color:#2C2C2C;}
-  .legal-hero{background:linear-gradient(150deg,#35583f 0%,#426E50 70%);border-radius:18px;padding:40px 28px;color:#FFF2D7;position:relative;overflow:hidden;}
-  .legal-hero::before{content:'';position:absolute;inset:0;background-image:url('assets/background.svg');background-size:cover;background-position:center;opacity:.18;}
-  .legal-hero > *{position:relative;}
-  .legal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:24px;}
-  .legal-card{background:#FFFFFF;border:1px solid rgba(66,110,80,0.12);border-radius:14px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.05);}
-  .legal-card h2{margin:0 0 10px;font-size:1.25rem;font-weight:800;color:#426E50;}
-  .legal-card p{margin:0 0 10px;line-height:1.65;color:#3f3f3f;}
-  .legal-card ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;color:#3f3f3f;line-height:1.55;}
-  .legal-note{margin-top:20px;padding:18px 20px;border-radius:12px;background:rgba(152,25,21,0.08);border:1px solid rgba(152,25,21,0.2);font-size:.95rem;line-height:1.6;color:#5a2b2b;}
-  @media (max-width: 900px){
-    .altino-nav-inner{padding:12px 16px;flex-wrap:wrap;align-items:center;}
-    .altino-brand img{height:48px;}
-    .altino-links{display:none;}
-    .altino-mobile{display:block;margin-left:auto;}
-    .altino-mobile-panel{flex-basis:100%;width:100%;}
-    .altino-mobile[open] + .altino-mobile-panel{display:flex;}
-    .legal-wrap{padding:56px 16px 80px;}
-    .legal-hero{padding:28px 18px;}
-  }
-</style>
+
 </helmet>
 
-<div style="font-family:'Nunito',sans-serif;color:#2C2C2C;background:#FFF2D7;">
+<div class="legal__node--0fc6528a">
   <header class="altino-header">
     <nav aria-label="Principal" class="altino-nav">
       <div class="altino-nav-inner">
@@ -110,9 +62,9 @@
   <main>
     <section class="legal-wrap" aria-label="Términos y privacidad">
       <div class="legal-hero">
-        <span style="font-size:.82rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,242,215,.78);">Actualizado: 14/07/2026</span>
-        <h1 style="margin:8px 0 0;font-size:clamp(1.9rem,4.7vw,3rem);font-weight:800;line-height:1.1;">Términos, Privacidad y Tratamiento de Datos</h1>
-        <p style="margin:10px 0 0;max-width:760px;line-height:1.7;color:rgba(255,242,215,.92);">Este documento regula el uso de este sitio web, la recepción de solicitudes por formulario, la comunicación por WhatsApp y las condiciones comerciales generales de Altino Café Noble.</p>
+        <span class="legal__node--3579757f">Actualizado: 14/07/2026</span>
+        <h1 class="legal__node--561d1b59">Términos, Privacidad y Tratamiento de Datos</h1>
+        <p class="legal__node--48c71d46">Este documento regula el uso de este sitio web, la recepción de solicitudes por formulario, la comunicación por WhatsApp y las condiciones comerciales generales de Altino Café Noble.</p>
       </div>
 
       <div class="legal-grid">
@@ -204,32 +156,32 @@
     </section>
   </main>
 
-  <footer style="position:relative;overflow:hidden;background:#426E50;color:#FFF2D7;font-family:'Nunito',sans-serif;">
-    <div style="position:absolute;inset:0;background-image:url('assets/background.svg');background-size:cover;background-position:center center;opacity:0.16;pointer-events:none;"></div>
-    <div style="position:relative;max-width:1200px;margin:0 auto;padding:64px 24px 32px;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px 32px;">
-        <div style="display:flex;flex-direction:column;gap:16px;max-width:300px;">
-          <img src="assets/AF_LOGO%20CAFE%20ALTINO_beige.png" alt="Altino Cafe Noble - Aroma del Paramillo" style="width:150px;height:auto;display:block;" />
-          <p style="margin:0;font-size:.9rem;line-height:1.7;color:rgba(255,242,215,0.82);">Dabeiba, Antioquia, Colombia.<br>1850 MSNM - Nudo del Paramillo.</p>
+  <footer class="legal__node--73a7467d">
+    <div class="legal__node--e19df6da"></div>
+    <div class="legal__node--ce59ea5c">
+      <div class="legal__node--e09e77db">
+        <div class="legal__node--c276d821">
+          <img class="legal__node--9674a507" src="assets/AF_LOGO%20CAFE%20ALTINO_beige.png" alt="Altino Cafe Noble - Aroma del Paramillo" />
+          <p class="legal__node--d2012c13">Dabeiba, Antioquia, Colombia.<br>1850 MSNM - Nudo del Paramillo.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <h4 style="margin:0 0 4px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,242,215,0.6);">Navegación</h4>
-          <a href="index.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Inicio</a>
-          <a href="origen.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Origen</a>
-          <a href="catalogo.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Catálogo</a>
-          <a href="contacto.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Contacto</a>
-          <a href="legal.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Términos y Privacidad</a>
+        <div class="legal__node--25ae862b">
+          <h4 class="legal__node--a1b2729f">Navegación</h4>
+          <a class="legal__node--1ba347d2" href="index.html">Inicio</a>
+          <a class="legal__node--1ba347d2" href="origen.html">Origen</a>
+          <a class="legal__node--1ba347d2" href="catalogo.html">Catálogo</a>
+          <a class="legal__node--1ba347d2" href="contacto.html">Contacto</a>
+          <a class="legal__node--1ba347d2" href="legal.html">Términos y Privacidad</a>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <h4 style="margin:0 0 4px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,242,215,0.6);">Contacto</h4>
-          <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;display:inline-flex;align-items:center;gap:8px;" style-hover="color:#fff;">✆ (+57) 313 711 9699</a>
-          <a href="https://instagram.com/altino.cafe" target="_blank" rel="noopener" aria-label="Instagram de Altino" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;display:inline-flex;align-items:center;gap:8px;" style-hover="color:#fff;">◎ @altino.cafe</a>
-          <span style="font-size:.95rem;color:rgba(255,242,215,0.82);display:inline-flex;align-items:center;gap:8px;">⌖ Dabeiba, Antioquia</span>
+        <div class="legal__node--25ae862b">
+          <h4 class="legal__node--a1b2729f">Contacto</h4>
+          <a class="legal__node--8509b6b8" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><img src="assets/icon-whatsapp.png" class="altino-icon-png" alt="" aria-hidden="true" /> (+57) 313 711 9699</a>
+          <a class="legal__node--8509b6b8" href="https://instagram.com/altino.cafe" target="_blank" rel="noopener" aria-label="Instagram de Altino"><img src="assets/icon-instagram.png" class="altino-icon-png" alt="" aria-hidden="true" /> @altino.cafe</a>
+          <span class="legal__node--6385c311"><img src="assets/icon-ubicacion.png" class="altino-icon-png" alt="" aria-hidden="true" /> Dabeiba, Antioquia</span>
         </div>
       </div>
-      <div style="margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,242,215,0.18);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">
-        <span style="font-size:.82rem;color:rgba(255,242,215,0.65);">© 2026 Altino Café Noble. Todos los derechos reservados.</span>
-        <span style="font-size:.82rem;color:rgba(255,242,215,0.65);font-style:italic;">Aroma del Paramillo</span>
+      <div class="legal__node--3a3c7795">
+        <span class="legal__node--0f57465a">© 2026 Altino Café Noble. Todos los derechos reservados.</span>
+        <span class="legal__node--024c8ee1">Aroma del Paramillo</span>
       </div>
     </div>
   </footer>
@@ -237,3 +189,5 @@
 </x-dc>
 </body>
 </html>
+
+

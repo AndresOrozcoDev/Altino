@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -32,50 +32,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
-<style>
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{margin:0;background:#FFF2D7;overflow-x:hidden;}
-  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #981915;outline-offset:2px;border-radius:6px;}
-  input::placeholder,textarea::placeholder{color:#9a9a8a;}
-  .altino-header{position:sticky;top:0;z-index:50;font-family:'Nunito',sans-serif;}
-  .altino-nav{background:#FFF2D7;box-shadow:0 1px 0 rgba(66,110,80,0.08);}
-  .altino-nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
-  .altino-brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
-  .altino-brand img{height:60px;width:auto;display:block;}
-  .altino-links{display:flex;align-items:center;gap:8px;}
-  .altino-link{position:relative;text-decoration:none;color:#59614D;font-weight:600;font-size:.95rem;padding:8px 14px;border-radius:9999px;transition:color .2s ease;}
-  .altino-link-active{color:#426E50;font-weight:700;}
-  .altino-link-active::after{content:'';position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:#981915;border-radius:2px;}
-  .altino-wa{margin-left:8px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.92rem;padding:10px 20px;border-radius:9999px;white-space:nowrap;}
-  .altino-mobile{display:none;}
-  .altino-mobile summary{list-style:none;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:#426E50;padding:8px 4px;cursor:pointer;border:none;}
-  .altino-mobile summary::-webkit-details-marker{display:none;}
-  .altino-mobile summary::marker{display:none;}
-  .menu-label-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
-  .menu-icon{width:26px;height:18px;display:inline-flex;flex-direction:column;justify-content:space-between;}
-  .menu-icon span{display:block;width:100%;height:2.5px;background:#426E50;border-radius:2px;transform-origin:center;transition:transform .25s ease,opacity .2s ease;}
-  .altino-mobile[open] .menu-icon span:nth-child(1){transform:translateY(7.8px) rotate(45deg);}
-  .altino-mobile[open] .menu-icon span:nth-child(2){opacity:0;}
-  .altino-mobile[open] .menu-icon span:nth-child(3){transform:translateY(-7.8px) rotate(-45deg);}
-  .altino-mobile-panel{display:none;flex-direction:column;gap:4px;margin-top:10px;padding:10px 0 0;border-top:1px solid rgba(66,110,80,0.15);}
-  .altino-mobile-link{text-decoration:none;color:#426E50;font-weight:700;font-size:1rem;padding:10px 2px;}
-  .altino-mobile-wa{text-decoration:none;text-align:center;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.95rem;padding:12px;border-radius:9999px;margin-top:8px;}
-  .altino-field{font-family:'Nunito',sans-serif;font-size:1rem;font-weight:500;color:#2C2C2C;padding:12px 14px;border-radius:10px;background:#FFF9EC;outline:none;border:1.5px solid rgba(66,110,80,0.25);}
-  .altino-field-error{border-color:#981915;}
-  .altino-field:focus-visible{border-color:#426E50;}
-  @media (max-width: 900px){
-    .altino-nav-inner{padding:12px 16px;flex-wrap:wrap;align-items:center;}
-    .altino-brand img{height:48px;}
-    .altino-links{display:none;}
-    .altino-mobile{display:block;margin-left:auto;}
-    .altino-mobile-panel{flex-basis:100%;width:100%;}
-    .altino-mobile[open] + .altino-mobile-panel{display:flex;}
-  }
-</style>
+
 </helmet>
 
-<div style="font-family:'Nunito',sans-serif;color:#2C2C2C;background:#FFF2D7;">
+<div class="contacto__node--0fc6528a">
   <header class="altino-header">
     <nav aria-label="Principal" class="altino-nav">
       <div class="altino-nav-inner">
@@ -108,125 +68,125 @@
 
   <main>
     <!-- HERO -->
-    <section data-screen-label="Contacto Hero" style="position:relative;overflow:hidden;background:linear-gradient(150deg,#35583f 0%,#426E50 70%);">
-      <div style="position:absolute;inset:0;background-image:url('assets/background.svg');background-size:cover;background-position:center;opacity:0.34;"></div>
-      <div style="position:relative;max-width:1100px;margin:0 auto;padding:108px 24px 72px;display:flex;flex-direction:column;gap:14px;">
-        <span style="font-size:.82rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,242,215,0.72);">Hablemos de café</span>
-        <h1 style="margin:0;font-size:clamp(2.4rem,5.5vw,3.6rem);font-weight:800;line-height:1.05;color:#FFF2D7;">Contacto</h1>
-        <p style="margin:0;max-width:560px;font-size:1.05rem;line-height:1.6;color:rgba(255,242,215,0.9);">¿Quieres hacer un pedido o distribuir Altino? Escríbenos y te respondemos directamente.</p>
+    <section class="contacto__node--13fb4fcc" data-screen-label="Contacto Hero">
+      <div class="contacto__node--e19c9001"></div>
+      <div class="contacto__node--9335b153">
+        <span class="contacto__node--d1fbf664">Hablemos de café</span>
+        <h1 class="contacto__node--90ff48b0">Contacto</h1>
+        <p class="contacto__node--e4472287">¿Quieres hacer un pedido o distribuir Altino? Escríbenos y te respondemos directamente.</p>
       </div>
     </section>
 
     <!-- FORM + DATOS -->
-    <section data-screen-label="Formulario" style="max-width:1100px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:start;">
+    <section class="contacto__node--2fbaa0f7" data-screen-label="Formulario">
 
       <!-- FORM -->
-      <div style="background:#FFFFFF;border-radius:18px;border:1px solid rgba(66,110,80,0.12);box-shadow:0 4px 16px rgba(66,110,80,0.10);padding:36px;">
+      <div class="contacto__node--b11efe61">
         <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
-          <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:20px;">
-            <h2 style="margin:0;font-size:1.5rem;font-weight:800;color:#426E50;">Envíanos un mensaje</h2>
+          <form class="contacto__node--760406cf" onSubmit="{{ onSubmit }}">
+            <h2 class="contacto__node--1eb06f92">Envíanos un mensaje</h2>
 
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:700;color:#59614D;">Nombre completo *
+            <label class="contacto__node--8e5e518b">Nombre completo *
               <input type="text" name="nombre" value="{{ nombre }}" onChange="{{ onNombre }}" placeholder="Tu nombre" class="{{ nombreInputClass }}"/>
-              <sc-if value="{{ errNombre }}" hint-placeholder-val="{{ false }}"><span style="font-size:.78rem;font-weight:600;color:#981915;">Por favor ingresa tu nombre.</span></sc-if>
+              <sc-if value="{{ errNombre }}" hint-placeholder-val="{{ false }}"><span class="contacto__node--c137a42b">Por favor ingresa tu nombre.</span></sc-if>
             </label>
 
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:700;color:#59614D;">Correo electrónico *
+            <label class="contacto__node--8e5e518b">Correo electrónico *
               <input type="email" name="correo" value="{{ correo }}" onChange="{{ onCorreo }}" placeholder="tucorreo@ejemplo.com" class="{{ correoInputClass }}"/>
-              <sc-if value="{{ errCorreo }}" hint-placeholder-val="{{ false }}"><span style="font-size:.78rem;font-weight:600;color:#981915;">Ingresa un correo válido.</span></sc-if>
+              <sc-if value="{{ errCorreo }}" hint-placeholder-val="{{ false }}"><span class="contacto__node--c137a42b">Ingresa un correo válido.</span></sc-if>
             </label>
 
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:700;color:#59614D;">Teléfono (opcional)
-              <input type="tel" name="telefono" value="{{ telefono }}" onChange="{{ onTelefono }}" placeholder="(+57) 300 000 0000" style="font-family:'Nunito',sans-serif;font-size:1rem;font-weight:500;color:#2C2C2C;padding:12px 14px;border:1.5px solid rgba(66,110,80,0.25);border-radius:10px;background:#FFF9EC;outline:none;" style-focus="border-color:#426E50;"/>
+            <label class="contacto__node--8e5e518b">Teléfono (opcional)
+              <input class="contacto__node--0a57f370" type="tel" name="telefono" value="{{ telefono }}" onChange="{{ onTelefono }}" placeholder="(+57) 300 000 0000"/>
             </label>
 
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:.85rem;font-weight:700;color:#59614D;">Mensaje *
-              <textarea name="mensaje" rows="4" value="{{ mensaje }}" onChange="{{ onMensaje }}" placeholder="Cuéntanos qué necesitas..." class="{{ mensajeInputClass }}" style="resize:vertical;"></textarea>
-              <sc-if value="{{ errMensaje }}" hint-placeholder-val="{{ false }}"><span style="font-size:.78rem;font-weight:600;color:#981915;">Escribe un mensaje.</span></sc-if>
+            <label class="contacto__node--8e5e518b">Mensaje *
+              <textarea name="mensaje" rows="4" value="{{ mensaje }}" onChange="{{ onMensaje }}" placeholder="Cuéntanos qué necesitas..." class="{{ mensajeInputClass }} contacto__node--b61b30f7"></textarea>
+              <sc-if value="{{ errMensaje }}" hint-placeholder-val="{{ false }}"><span class="contacto__node--c137a42b">Escribe un mensaje.</span></sc-if>
             </label>
 
-            <label style="display:flex;align-items:flex-start;gap:10px;font-size:.92rem;font-weight:500;color:#2C2C2C;cursor:pointer;">
-              <input type="checkbox" checked="{{ esDistribuidor }}" onChange="{{ onToggle }}" style="width:20px;height:20px;accent-color:#426E50;margin-top:1px;flex-shrink:0;"/>
+            <label class="contacto__node--ba432aa8">
+              <input class="contacto__node--f01241a3" type="checkbox" checked="{{ esDistribuidor }}" onChange="{{ onToggle }}"/>
               <span>Soy distribuidor / tengo una cafetería</span>
             </label>
 
-            <button type="submit" style="font-family:'Nunito',sans-serif;cursor:pointer;border:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:1.05rem;padding:15px;border-radius:9999px;transition:background .2s ease, transform .2s ease;" style-hover="background:#59614D;transform:translateY(-1px);">Enviar mensaje</button>
-            <span style="font-size:.78rem;color:#59614D;text-align:center;">Tu mensaje se abrirá en WhatsApp listo para enviar.</span>
+            <button class="contacto__node--fc1bfbc9" type="submit">Enviar mensaje</button>
+            <span class="contacto__node--860bb9db">Tu mensaje se abrirá en WhatsApp listo para enviar.</span>
           </form>
         </sc-if>
 
         <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;padding:24px 8px;">
-            <div style="width:64px;height:64px;border-radius:9999px;background:rgba(66,110,80,0.12);display:flex;align-items:center;justify-content:center;font-size:2rem;color:#426E50;">✓</div>
-            <h2 style="margin:0;font-size:1.5rem;font-weight:800;color:#426E50;">¡Gracias, {{ nombre }}!</h2>
-            <p style="margin:0;font-size:1rem;line-height:1.6;color:#4a4a4a;max-width:340px;">Abrimos WhatsApp con tu mensaje. Si no se abrió, toca el botón para escribirnos directamente.</p>
-            <a href="{{ composedWa }}" target="_blank" rel="noopener" style="text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:1rem;padding:13px 26px;border-radius:9999px;" style-hover="background:#59614D;">Abrir WhatsApp</a>
-            <button onClick="{{ onReset }}" style="font-family:'Nunito',sans-serif;cursor:pointer;background:none;border:none;color:#59614D;font-weight:700;font-size:.9rem;text-decoration:underline;">Enviar otro mensaje</button>
+          <div class="contacto__node--c9c18e0f">
+            <div class="contacto__node--2c387c11">✓</div>
+            <h2 class="contacto__node--1eb06f92">¡Gracias, {{ nombre }}!</h2>
+            <p class="contacto__node--167624b1">Abrimos WhatsApp con tu mensaje. Si no se abrió, toca el botón para escribirnos directamente.</p>
+            <a class="contacto__node--ad8af34a" href="{{ composedWa }}" target="_blank" rel="noopener">Abrir WhatsApp</a>
+            <button class="contacto__node--da2c767d" onClick="{{ onReset }}">Enviar otro mensaje</button>
           </div>
         </sc-if>
       </div>
 
       <!-- DATOS -->
-      <div style="display:flex;flex-direction:column;gap:20px;">
-        <div style="display:flex;flex-direction:column;gap:18px;padding:32px;background:#426E50;border-radius:18px;position:relative;overflow:hidden;box-shadow:0 8px 32px rgba(66,110,80,0.18);">
-          <div style="position:absolute;inset:0;background-image:url('assets/topo-cream.svg');background-size:cover;opacity:0.12;"></div>
-          <h2 style="position:relative;margin:0;font-size:1.3rem;font-weight:800;color:#FFF2D7;">Datos de contacto</h2>
-          <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:relative;display:flex;align-items:center;gap:14px;text-decoration:none;color:#FFF2D7;" style-hover="color:#fff;">
-            <span style="width:42px;height:42px;border-radius:10px;background:rgba(255,242,215,0.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">✆</span>
-            <span style="display:flex;flex-direction:column;"><span style="font-size:.75rem;color:rgba(255,242,215,0.7);font-weight:600;text-transform:uppercase;letter-spacing:.08em;">WhatsApp</span><span style="font-size:1.05rem;font-weight:700;">(+57) 313 711 9699</span></span>
+      <div class="contacto__node--760406cf">
+        <div class="contacto__node--47db7bad">
+          <div class="contacto__node--8662c229"></div>
+          <h2 class="contacto__node--8e5470a9">Datos de contacto</h2>
+          <a class="contacto__node--d9b4af87" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <span class="contacto__node--959678b8"><img src="assets/icon-whatsapp.png" class="altino-icon-png altino-icon-png--contact" alt="" aria-hidden="true" /></span>
+            <span class="contacto__node--b5b5ec1d"><span class="contacto__node--e46bda18">WhatsApp</span><span class="contacto__node--45632e6c">(+57) 313 711 9699</span></span>
           </a>
-          <a href="https://instagram.com/altino.cafe" target="_blank" rel="noopener" aria-label="Instagram" style="position:relative;display:flex;align-items:center;gap:14px;text-decoration:none;color:#FFF2D7;" style-hover="color:#fff;">
-            <span style="width:42px;height:42px;border-radius:10px;background:rgba(255,242,215,0.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">◎</span>
-            <span style="display:flex;flex-direction:column;"><span style="font-size:.75rem;color:rgba(255,242,215,0.7);font-weight:600;text-transform:uppercase;letter-spacing:.08em;">Instagram</span><span style="font-size:1.05rem;font-weight:700;">@altino.cafe</span></span>
+          <a class="contacto__node--d9b4af87" href="https://instagram.com/altino.cafe" target="_blank" rel="noopener" aria-label="Instagram">
+            <span class="contacto__node--959678b8"><img src="assets/icon-instagram.png" class="altino-icon-png altino-icon-png--contact" alt="" aria-hidden="true" /></span>
+            <span class="contacto__node--b5b5ec1d"><span class="contacto__node--e46bda18">Instagram</span><span class="contacto__node--45632e6c">@altino.cafe</span></span>
           </a>
-          <div style="position:relative;display:flex;align-items:center;gap:14px;color:#FFF2D7;">
-            <span style="width:42px;height:42px;border-radius:10px;background:rgba(255,242,215,0.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">⌖</span>
-            <span style="display:flex;flex-direction:column;"><span style="font-size:.75rem;color:rgba(255,242,215,0.7);font-weight:600;text-transform:uppercase;letter-spacing:.08em;">Ubicación</span><span style="font-size:1.05rem;font-weight:700;">Dabeiba, Antioquia, Colombia</span></span>
+          <div class="contacto__node--738f52f8">
+            <span class="contacto__node--959678b8"><img src="assets/icon-ubicacion.png" class="altino-icon-png altino-icon-png--contact" alt="" aria-hidden="true" /></span>
+            <span class="contacto__node--b5b5ec1d"><span class="contacto__node--e46bda18">Ubicación</span><span class="contacto__node--45632e6c">Dabeiba, Antioquia, Colombia</span></span>
           </div>
         </div>
 
-        <div style="display:flex;flex-direction:column;gap:14px;padding:28px;background:#FFFFFF;border-radius:18px;border:1px solid rgba(66,110,80,0.12);box-shadow:0 2px 12px rgba(0,0,0,0.05);">
-          <span style="align-self:flex-start;background:#981915;color:#FFF2D7;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:9999px;">Distribuidores</span>
-          <h3 style="margin:0;font-size:1.25rem;font-weight:800;color:#426E50;">¿Tienes una cafetería?</h3>
-          <p style="margin:0;font-size:.98rem;line-height:1.6;color:#4a4a4a;">Precios especiales y catálogo exclusivo para distribuidores y cafeterías. Marca la casilla del formulario o escríbenos directamente.</p>
-          <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20ser%20distribuidor%20de%20Altino" target="_blank" rel="noopener" style="text-align:center;text-decoration:none;background:#981915;color:#FFF2D7;font-weight:700;font-size:.98rem;padding:13px;border-radius:9999px;transition:filter .2s ease;" style-hover="filter:brightness(1.08);">Quiero ser distribuidor →</a>
+        <div class="contacto__node--d9d3bf76">
+          <span class="contacto__node--93be8d90">Distribuidores</span>
+          <h3 class="contacto__node--a965762a">¿Tienes una cafetería?</h3>
+          <p class="contacto__node--cd9a5e68">Precios especiales y catálogo exclusivo para distribuidores y cafeterías. Marca la casilla del formulario o escríbenos directamente.</p>
+          <a class="contacto__node--a2250973" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20ser%20distribuidor%20de%20Altino" target="_blank" rel="noopener">Quiero ser distribuidor →</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer style="position:relative;overflow:hidden;background:#426E50;color:#FFF2D7;font-family:'Nunito',sans-serif;">
-    <div style="position:absolute;inset:0;background-image:url('assets/background.svg');background-size:cover;background-position:center center;opacity:0.16;pointer-events:none;"></div>
-    <div style="position:relative;max-width:1200px;margin:0 auto;padding:64px 24px 32px;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px 32px;">
-        <div style="display:flex;flex-direction:column;gap:16px;max-width:300px;">
-          <img src="assets/AF_LOGO%20CAFE%20ALTINO_beige.png" alt="Altino Cafe Noble - Aroma del Paramillo" style="width:150px;height:auto;display:block;" />
-          <p style="margin:0;font-size:.9rem;line-height:1.7;color:rgba(255,242,215,0.82);">Dabeiba, Antioquia, Colombia.<br>1850 MSNM - Nudo del Paramillo.</p>
+  <footer class="contacto__node--73a7467d">
+    <div class="contacto__node--e19df6da"></div>
+    <div class="contacto__node--ce59ea5c">
+      <div class="contacto__node--e09e77db">
+        <div class="contacto__node--c276d821">
+          <img class="contacto__node--9674a507" src="assets/AF_LOGO%20CAFE%20ALTINO_beige.png" alt="Altino Cafe Noble - Aroma del Paramillo" />
+          <p class="contacto__node--d2012c13">Dabeiba, Antioquia, Colombia.<br>1850 MSNM - Nudo del Paramillo.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <h4 style="margin:0 0 4px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,242,215,0.6);">Navegación</h4>
-          <a href="index.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Inicio</a>
-          <a href="origen.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Origen</a>
-          <a href="catalogo.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Catálogo</a>
-          <a href="contacto.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Contacto</a>
-          <a href="legal.html" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;" style-hover="color:#fff;">Términos y Privacidad</a>
+        <div class="contacto__node--25ae862b">
+          <h4 class="contacto__node--a1b2729f">Navegación</h4>
+          <a class="contacto__node--1ba347d2" href="index.html">Inicio</a>
+          <a class="contacto__node--1ba347d2" href="origen.html">Origen</a>
+          <a class="contacto__node--1ba347d2" href="catalogo.html">Catálogo</a>
+          <a class="contacto__node--1ba347d2" href="contacto.html">Contacto</a>
+          <a class="contacto__node--1ba347d2" href="legal.html">Términos y Privacidad</a>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <h4 style="margin:0 0 4px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,242,215,0.6);">Contacto</h4>
-          <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;display:inline-flex;align-items:center;gap:8px;" style-hover="color:#fff;">✆ (+57) 313 711 9699</a>
-          <a href="https://instagram.com/altino.cafe" target="_blank" rel="noopener" aria-label="Instagram de Altino" style="text-decoration:none;color:#FFF2D7;font-size:.95rem;font-weight:500;display:inline-flex;align-items:center;gap:8px;" style-hover="color:#fff;">◎ @altino.cafe</a>
-          <span style="font-size:.95rem;color:rgba(255,242,215,0.82);display:inline-flex;align-items:center;gap:8px;">⌖ Dabeiba, Antioquia</span>
+        <div class="contacto__node--25ae862b">
+          <h4 class="contacto__node--a1b2729f">Contacto</h4>
+          <a class="contacto__node--8509b6b8" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><img src="assets/icon-whatsapp.png" class="altino-icon-png" alt="" aria-hidden="true" /> (+57) 313 711 9699</a>
+          <a class="contacto__node--8509b6b8" href="https://instagram.com/altino.cafe" target="_blank" rel="noopener" aria-label="Instagram de Altino"><img src="assets/icon-instagram.png" class="altino-icon-png" alt="" aria-hidden="true" /> @altino.cafe</a>
+          <span class="contacto__node--6385c311"><img src="assets/icon-ubicacion.png" class="altino-icon-png" alt="" aria-hidden="true" /> Dabeiba, Antioquia</span>
         </div>
-        <div style="display:flex;flex-direction:column;gap:14px;max-width:260px;">
-          <h4 style="margin:0;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,242,215,0.6);">Distribuidores</h4>
-          <p style="margin:0;font-size:.9rem;line-height:1.6;color:rgba(255,242,215,0.82);font-weight:600;">¿Haces crecer tu negocio con café de calidad?</p>
-          <p style="margin:0;font-size:.9rem;line-height:1.6;color:rgba(255,242,215,0.82);">Tenemos precios especiales para distribuidores y cafeterías. Escríbenos y recibe nuestro catálogo exclusivo.</p>
-          <a href="https://wa.me/573137119699?text=Hola%2C%20quiero%20ser%20distribuidor%20de%20Altino" target="_blank" rel="noopener" style="text-decoration:none;text-align:center;background:#981915;color:#FFF2D7;font-weight:700;font-size:.9rem;padding:11px 18px;border-radius:9999px;transition:transform .2s ease, filter .2s ease;" style-hover="transform:translateY(-1px);filter:brightness(1.08);">Quiero ser distribuidor →</a>
+        <div class="contacto__node--f85c1751">
+          <h4 class="contacto__node--6b9ee9ca">Distribuidores</h4>
+          <p class="contacto__node--466fb138">¿Haces crecer tu negocio con café de calidad?</p>
+          <p class="contacto__node--f158b208">Tenemos precios especiales para distribuidores y cafeterías. Escríbenos y recibe nuestro catálogo exclusivo.</p>
+          <a class="contacto__node--78d0cd8d" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20ser%20distribuidor%20de%20Altino" target="_blank" rel="noopener">Quiero ser distribuidor →</a>
         </div>
       </div>
-      <div style="margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,242,215,0.18);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">
-        <span style="font-size:.82rem;color:rgba(255,242,215,0.65);">© 2025 Altino Café Noble. Todos los derechos reservados.</span>
-        <span style="font-size:.82rem;color:rgba(255,242,215,0.65);font-style:italic;">Aroma del Paramillo</span>
+      <div class="contacto__node--3a3c7795">
+        <span class="contacto__node--0f57465a">© 2025 Altino Café Noble. Todos los derechos reservados.</span>
+        <span class="contacto__node--024c8ee1">Aroma del Paramillo</span>
       </div>
     </div>
   </footer>
@@ -287,3 +247,5 @@ class Component extends DCLogic {
 </script>
 </body>
 </html>
+
+

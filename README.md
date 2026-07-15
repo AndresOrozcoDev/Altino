@@ -11,20 +11,19 @@ Este repositorio contiene una web estatica multi pagina enfocada en:
 - Catalogo de productos con precios y CTAs a WhatsApp.
 - Contacto comercial y flujo para distribuidores.
 
-La web usa una arquitectura sin build step tradicional: HTML + CSS + JS en cliente, mas un runtime personalizado en [support.js](support.js) que hidrata templates declarativos definidos con etiquetas como x-dc y scripts text/x-dc.
+La web usa una arquitectura sin build step tradicional: HTML + CSS + JS en cliente, con logica centralizada en [main.js](main.js) y estilos compartidos en [styles.css](styles.css). El runtime hidrata templates declarativos definidos con etiquetas como x-dc y scripts text/x-dc.
 
 ## Tecnologias y versiones
 
 ![HTML5](https://img.shields.io/badge/HTML5-Est%C3%A1tico-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-Estilos-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?logo=javascript&logoColor=black)
-![React UMD](https://img.shields.io/badge/React-18.3.1-61DAFB?logo=react&logoColor=black)
-![React DOM UMD](https://img.shields.io/badge/ReactDOM-18.3.1-61DAFB?logo=react&logoColor=black)
 ![License](https://img.shields.io/badge/Licencia-MIT-green)
 
 Notas tecnicas:
 
-- React y ReactDOM se cargan via UMD desde unpkg dentro de [support.js](support.js).
+- El runtime en [main.js](main.js) es JavaScript puro (sin React ni ReactDOM).
+- Los estilos compartidos y del skeleton de carga estan centralizados en [styles.css](styles.css).
 - No existe package.json ni proceso de compilacion requerido para ejecutar el sitio.
 
 ## Requerimientos
@@ -58,7 +57,9 @@ Notas tecnicas:
 - [origen.html](origen.html) : historia, territorio y ficha tecnica.
 - [catalogo.html](catalogo.html) : productos de cafe y accesorios.
 - [contacto.html](contacto.html) : formulario de contacto y distribuidores.
-- [support.js](support.js) : runtime cliente para templates x-dc, logica de componentes y carga de React UMD.
+- [main.js](main.js) : logica compartida del sitio (runtime x-dc, estado, eventos, skeleton y utilidades globales).
+- [styles.css](styles.css) : estilos compartidos del sitio (incluye skeleton de carga).
+- [support.js](support.js) : archivo legado conservado para compatibilidad.
 - [robots.txt](robots.txt) : directivas de rastreo.
 - [sitemap.xml](sitemap.xml) : mapa del sitio para indexacion.
 - [LICENSE](LICENSE) : licencia MIT.

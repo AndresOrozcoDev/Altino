@@ -143,7 +143,7 @@
         <div style="display:flex;flex-direction:column;gap:14px;">
           <span style="font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#981915;">El lugar</span>
           <h2 style="margin:0;font-size:clamp(1.7rem,3.4vw,2.2rem);font-weight:800;color:#426E50;line-height:1.15;">Las laderas del Nudo del Paramillo</h2>
-          <p style="margin:0;font-size:1.05rem;line-height:1.75;color:#3a3a3a;">Altino nace a 1850 MSNM, en la Vereda Charrascal, corregimiento San José de Urama, municipio de Dabeiba, Antioquia. Estamos ubicados en las laderas del Nudo del Paramillo, un ecosistema estratégico que nos exige una caficultura de alta precisión y un respeto absoluto por el entorno natural.</p>
+          <p style="margin:0;font-size:1.05rem;line-height:1.75;color:#3a3a3a;">Altino nace en las laderas del Nudo del Paramillo, a 1850 m s. n. m., un ecosistema estratégico en Dabeiba, Antioquia, que nos exige una caficultura de alta precisión y un respeto absoluto por el entorno. Nuestro café une biodiversidad, historia y resiliencia a través de tres orígenes locales: en el corregimiento San José de Urama (vereda Charrascal) cosechamos en las fincas Los Socios y Villa Consuelo, de la mano del productor Aicardo López; y en la vereda El Pital, cultivamos en la finca La Chiquita junto al productor Oscar Álvarez.</p>
         </div>
         <div style="position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#59614D;background-image:url('assets/topo-cream.svg');background-size:cover;background-position:center;box-shadow:0 8px 32px rgba(66,110,80,0.18);">
           <div style="position:absolute;inset:0;background:linear-gradient(150deg,rgba(66,110,80,0.45),rgba(89,97,77,0.65));"></div>
@@ -159,7 +159,7 @@
         <div style="display:flex;flex-direction:column;gap:14px;direction:ltr;">
           <span style="font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#981915;">La finca</span>
           <h2 style="margin:0;font-size:clamp(1.7rem,3.4vw,2.2rem);font-weight:800;color:#426E50;line-height:1.15;">Finca Los Socios</h2>
-          <p style="margin:0;font-size:1.05rem;line-height:1.75;color:#3a3a3a;">En nuestra casa, la Finca Los Socios, cultivamos con rigor técnico variedades que cuentan la historia de la caficultura colombiana: Castillo, Caturra, Colombia, Marsellesa y Cenicafé 1. Esta diversidad de perfiles, unida a la altitud, nos permite entregar un café de suavidad excepcional y una calidad sensorial que solo se logra cuando el trabajo duro, la tenacidad y la montaña se encuentran.</p>
+          <p style="margin:0;font-size:1.05rem;line-height:1.75;color:#3a3a3a;">En nuestra casa matriz cultivamos con rigor técnico variedades que cuentan la historia de la caficultura colombiana: Castillo, Caturra, Colombia, Marsellesa y Cenicafé 1. Esta diversidad de perfiles, unida a la altitud, nos permite entregar un café de suavidad excepcional y alta calidad sensorial.<br><br>Finca Villa Consuelo: Un origen que rinde homenaje a la tradición de la montaña a través del cultivo meticuloso de las variedades Colombia, Castillo y Caturra, logrando un balance perfecto en taza.<br><br>Finca La Chiquita: El escenario de la innovación y la adaptación, donde la altitud recibe a las variedades Etíope, Cenicafé y Colombia, entregando perfiles únicos y diferenciados.<br><br>Tres fincas donde el trabajo duro, la tenacidad y la geografía de Dabeiba se encuentran para crear un café extraordinario.</p>
         </div>
       </div>
 
@@ -257,17 +257,17 @@ class Component extends DCLogic {
   renderVals() {
     const stats = [
       { value: '1850', label: 'MSNM de altitud' },
-      { value: '5', label: 'Variedades cultivadas' },
+      { value: '7', label: 'Variedades cultivadas' },
       { value: '4', label: 'Procesos de beneficio' },
       { value: '100%', label: 'Origen Dabeiba' },
     ];
     const ficha = [
-      { k: 'Altitud', v: '1850 MSNM' },
+      { k: 'Altitud', v: 'Desde los 1300 a los 1850 MSNM' },
       { k: 'Municipio', v: 'Dabeiba, Antioquia' },
-      { k: 'Vereda', v: 'Charrascal' },
-      { k: 'Finca', v: 'Los Socios' },
+      { k: 'Vereda', v: 'El Pital y Charrascal' },
+      { k: 'Fincas', v: 'La Chiquita, Los Socios y Villa Consuelo' },
       { k: 'Ecosistema', v: 'Nudo del Paramillo' },
-      { k: 'Variedades', v: 'Castillo, Caturra, Colombia, Marsellesa, Cenicafé 1' },
+      { k: 'Variedades', v: 'Castillo, Caturra, Colombia, Marsellesa, Cenicafé 1 y Etíope' },
       { k: 'Procesos', v: 'Lavado, Fermentación Extendida, Honey, Natural' },
     ];
     return { stats, ficha };

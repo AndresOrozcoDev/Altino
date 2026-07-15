@@ -89,6 +89,49 @@
     navInner.appendChild(panel);
   }
 
+  function initScrollReveal() {
+    const groups = [
+      { selector: ".index__node--e4d5bf09", mode: "sides" },
+      { selector: ".origen__node--99f65fea", mode: "sides" }
+    ];
+
+    const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    for (const group of groups) {
+      const nodes = document.querySelectorAll(group.selector);
+      if (!nodes.length) continue;
+
+      nodes.forEach((node, index) => {
+        node.classList.add("altino-reveal");
+
+        if (group.mode === "sides") {
+          const sideClass = index % 2 === 0 ? "altino-reveal-left" : "altino-reveal-right";
+          node.classList.add(sideClass);
+        } else {
+          node.classList.add("altino-reveal-up");
+        }
+      });
+
+      if (reducedMotion || !("IntersectionObserver" in window)) {
+        nodes.forEach((node) => node.classList.add("is-visible"));
+        continue;
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
+        }
+      }, {
+        threshold: 0.16,
+        rootMargin: "0px 0px -8% 0px"
+      });
+
+      nodes.forEach((node) => observer.observe(node));
+    }
+  }
+
   function escapeHtml(value) {
     return String(value)
       .replace(/&/g, "&amp;")
@@ -366,10 +409,12 @@
   if (document.readyState !== "loading") {
     ensureIndexMobileMenu();
     boot();
+    initScrollReveal();
   } else {
     document.addEventListener("DOMContentLoaded", () => {
       ensureIndexMobileMenu();
       boot();
+      initScrollReveal();
     }, { once: true });
   }
 })();

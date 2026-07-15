@@ -57,6 +57,7 @@ Notas tecnicas:
 - [origen.html](origen.html) : historia, territorio y ficha tecnica.
 - [catalogo.html](catalogo.html) : productos de cafe y accesorios.
 - [contacto.html](contacto.html) : formulario de contacto y distribuidores.
+- [legal.html](legal.html) : términos y condiciones, privacidad y tratamiento de datos.
 - [main.js](main.js) : logica compartida del sitio (runtime x-dc, estado, eventos, skeleton y utilidades globales).
 - [styles.css](styles.css) : estilos compartidos del sitio (incluye skeleton de carga).
 - [support.js](support.js) : archivo legado conservado para compatibilidad.

@@ -900,6 +900,17 @@ html,
                             text-transform: uppercase;
                             padding: 6px 12px;
                             border-radius: 9999px; }
+/* Real product photo fills the square tile instead of overflowing.
+   No z-index: badges come after the photo in the DOM, so they paint on top. */
+.index__node--8a5d1218:has(img) { position: absolute;
+                            inset: 0; }
+.index__node--8a5d1218 img { display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover; }
+/* Photos have their own clean background, so no brand tint over them */
+.index__node--53fdcf5a:has(img) .index__node--7735e368 {
+                            display: none; }
 .index__node--2ebf64cf { display: flex;
                           flex-direction: column;
                           gap: 14px;

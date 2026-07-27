@@ -1236,6 +1236,12 @@ html,
 .catalogo__node--f64cf6e7 { position:absolute;inset:0;background:linear-gradient(160deg, rgba(66,110,80,0.55), rgba(89,97,77,0.75)); }
 .catalogo__node--94a97b9d { position:relative;font-family:'Courier New',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,242,215,0.85); }
 .catalogo__node--81a60acf { position:absolute;top:14px;left:14px;background:#426E50;color:#FFF2D7;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:9999px; }
+/* Real product photo fills the square tile. No z-index: the badge comes after
+   the photo in the DOM, so it paints on top on its own. */
+.catalogo__node--94a97b9d:has(img) { position:absolute;inset:0; }
+.catalogo__node--94a97b9d img { display:block;width:100%;height:100%;object-fit:cover; }
+/* Photos have their own clean background, so no brand tint over them */
+.catalogo__node--5a7d9ecb:has(img) .catalogo__node--f64cf6e7 { display:none; }
 .catalogo__node--af020645 { display:flex;flex-direction:column;gap:14px;padding:20px;flex:1; }
 .catalogo__node--68847d21 { margin:0;font-size:1.25rem;font-weight:700;color:#2C2C2C;line-height:1.2; }
 .catalogo__node--6c406ac9 { font-size:.8rem;color:#59614D;font-weight:500; }

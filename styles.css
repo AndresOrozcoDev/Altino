@@ -1242,6 +1242,11 @@ html,
 .catalogo__node--94a97b9d img { display:block;width:100%;height:100%;object-fit:cover; }
 /* Photos have their own clean background, so no brand tint over them */
 .catalogo__node--5a7d9ecb:has(img) .catalogo__node--f64cf6e7 { display:none; }
+/* Square product thumbnail used across accessory cards (termos, molinos,
+   métodos, complementos, café estándar, miel). position:relative keeps it
+   above any absolute card overlay (e.g. the miel card's topo texture). */
+.altino-product-media { position:relative;aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:#F4F2EF; }
+.altino-product-media img { display:block;width:100%;height:100%;object-fit:cover; }
 .catalogo__node--af020645 { display:flex;flex-direction:column;gap:14px;padding:20px;flex:1; }
 .catalogo__node--68847d21 { margin:0;font-size:1.25rem;font-weight:700;color:#2C2C2C;line-height:1.2; }
 .catalogo__node--6c406ac9 { font-size:.8rem;color:#59614D;font-weight:500; }
@@ -1268,16 +1273,16 @@ html,
 .catalogo__node--c2c03978 { display:flex;align-items:baseline;justify-content:space-between; }
 .catalogo__node--3f0dde44 { font-size:.9rem;color:#59614D;font-weight:500; }
 .catalogo__node--2fab171b { text-align:center;text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.95rem;padding:12px;border-radius:9999px;transition:background .2s ease; }
-.catalogo__node--7e76858c { display:flex;flex-direction:column;gap:18px;padding:32px;background:#426E50;border-radius:16px;box-shadow:0 8px 32px rgba(66,110,80,0.18);position:relative;overflow:hidden;transition:transform .2s ease, box-shadow .2s ease; }
-.catalogo__node--8662c229 { position:absolute;inset:0;background-image:url('assets/topo-cream.svg');background-size:cover;opacity:0.12; }
+.catalogo__node--7e76858c { display:flex;flex-direction:column;gap:18px;padding:32px;background:#FFFFFF;border-radius:16px;border:1px solid rgba(66,110,80,0.12);box-shadow:0 2px 12px rgba(0,0,0,0.05);position:relative;overflow:hidden;transition:transform .2s ease, box-shadow .2s ease; }
+.catalogo__node--8662c229 { display:none; }
 .catalogo__node--f9720873 { position:relative;display:flex;flex-direction:column;gap:6px; }
-.catalogo__node--93be8d90 { align-self:flex-start;background:#981915;color:#FFF2D7;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:9999px; }
-.catalogo__node--19542211 { margin:8px 0 0;font-size:1.4rem;font-weight:800;color:#FFF2D7; }
-.catalogo__node--427cbd19 { margin:0;font-size:.98rem;line-height:1.6;color:rgba(255,242,215,0.9); }
-.catalogo__node--aa5980a1 { position:relative;display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid rgba(255,242,215,0.25);padding-top:14px; }
-.catalogo__node--d217c74d { font-size:.9rem;color:rgba(255,242,215,0.85);font-weight:500; }
-.catalogo__node--290acfc4 { font-size:1.3rem;color:#FFF2D7;font-weight:800; }
-.catalogo__node--c43c9dbb { position:relative;text-align:center;text-decoration:none;background:#FFF2D7;color:#426E50;font-weight:700;font-size:.95rem;padding:12px;border-radius:9999px;transition:filter .2s ease; }
+.catalogo__node--93be8d90 { align-self:flex-start;background:#59614D;color:#FFF2D7;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:9999px; }
+.catalogo__node--19542211 { margin:8px 0 0;font-size:1.4rem;font-weight:800;color:#2C2C2C; }
+.catalogo__node--427cbd19 { margin:0;font-size:.98rem;line-height:1.6;color:#4a4a4a; }
+.catalogo__node--aa5980a1 { position:relative;display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid rgba(66,110,80,0.12);padding-top:14px; }
+.catalogo__node--d217c74d { font-size:.9rem;color:#59614D;font-weight:500; }
+.catalogo__node--290acfc4 { font-size:1.3rem;color:#426E50;font-weight:800; }
+.catalogo__node--c43c9dbb { position:relative;text-align:center;text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:.95rem;padding:12px;border-radius:9999px;transition:filter .2s ease; }
 .catalogo__node--7f3a8fe6 { background:#f4e6c4;padding:80px 0; }
 .catalogo__node--3fae77b6 { max-width:1200px;margin:0 auto;padding:0 24px; }
 .catalogo__node--a6bd6ddf { display:flex;flex-direction:column;gap:8px;margin-bottom:32px; }

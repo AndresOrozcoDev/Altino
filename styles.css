@@ -1097,7 +1097,7 @@ html,
 .contacto__node--ad8af34a { text-decoration:none;background:#426E50;color:#FFF2D7;font-weight:700;font-size:1rem;padding:13px 26px;border-radius:9999px; }
 .contacto__node--da2c767d { font-family:'Nunito',sans-serif;cursor:pointer;background:none;border:none;color:#59614D;font-weight:700;font-size:.9rem;text-decoration:underline; }
 .contacto__node--47db7bad { display:flex;flex-direction:column;gap:18px;padding:32px;background:#426E50;border-radius:18px;position:relative;overflow:hidden;box-shadow:0 8px 32px rgba(66,110,80,0.18); }
-.contacto__node--8662c229 { position:absolute;inset:0;background-image:url('assets/topo-cream.svg');background-size:cover;opacity:0.12; }
+.contacto__node--8662c229 { position:absolute;inset:0;background-size:cover;opacity:0.12; }
 .contacto__node--8e5470a9 { position:relative;margin:0;font-size:1.3rem;font-weight:800;color:#FFF2D7; }
 .contacto__node--d9b4af87 { position:relative;display:flex;align-items:center;gap:14px;text-decoration:none;color:#FFF2D7; }
 .contacto__node--959678b8 { width:42px;height:42px;border-radius:10px;background:rgba(255,242,215,0.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0; }
@@ -1204,18 +1204,18 @@ html,
 .origen__node--aa8ef238 { font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#981915; }
 .origen__node--0f411d33 { margin:0;font-size:clamp(1.7rem,3.4vw,2.2rem);font-weight:800;color:#426E50;line-height:1.15; }
 .origen__node--1198d951 { margin:0;font-size:1.05rem;line-height:1.75;color:#3a3a3a; }
-.origen__node--23e81a54 { position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#59614D;background-image:url('assets/topo-cream.svg');background-size:cover;background-position:center;box-shadow:0 8px 32px rgba(66,110,80,0.18); }
+.origen__node--23e81a54 { position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#59614D;background-size:cover;background-position:center;box-shadow:0 8px 32px rgba(66,110,80,0.18); }
 .origen__node--7b2cbcea { position:absolute;inset:0;background:linear-gradient(150deg,rgba(66,110,80,0.45),rgba(89,97,77,0.65)); }
 .origen__node--d4553c19 { position:absolute;left:16px;bottom:16px;font-family:'Courier New',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,242,215,0.85); }
 .origen__node--7e827a74 { display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;direction:rtl; }
-.origen__node--67598f25 { position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#426E50;background-image:url('assets/topo-cream.svg');background-size:cover;background-position:center;box-shadow:0 8px 32px rgba(66,110,80,0.18);direction:ltr; }
+.origen__node--67598f25 { position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#426E50;background-size:cover;background-position:center;box-shadow:0 8px 32px rgba(66,110,80,0.18);direction:ltr; }
 .origen__node--b765788e { display:flex;flex-direction:column;gap:14px;direction:ltr; }
 .origen__node--63c37cae { display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px; }
 .origen__node--f7b6c355 { display:flex;flex-direction:column;gap:14px;padding:32px;background:#FFFFFF;border-radius:16px;border:1px solid rgba(66,110,80,0.12);box-shadow:0 2px 12px rgba(0,0,0,0.05); }
 .origen__node--1a462fb1 { margin:0;font-size:clamp(1.5rem,3vw,1.9rem);font-weight:800;color:#426E50; }
 .origen__node--596011ff { margin:0;font-size:1.02rem;line-height:1.7;color:#3a3a3a; }
 .origen__node--4e58b994 { display:flex;flex-direction:column;gap:14px;padding:32px;background:#426E50;border-radius:16px;box-shadow:0 8px 32px rgba(66,110,80,0.18);position:relative;overflow:hidden; }
-.origen__node--8662c229 { position:absolute;inset:0;background-image:url('assets/topo-cream.svg');background-size:cover;opacity:0.12; }
+.origen__node--8662c229 { position:absolute;inset:0;background-size:cover;opacity:0.12; }
 .origen__node--790c9c3c { position:relative;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,242,215,0.7); }
 .origen__node--66bff95a { position:relative;margin:0;font-size:clamp(1.5rem,3vw,1.9rem);font-weight:800;color:#FFF2D7; }
 .origen__node--ea329389 { position:relative;margin:0;font-size:1.02rem;line-height:1.7;color:rgba(255,242,215,0.92); }

@@ -170,7 +170,7 @@
       <div class="catalogo__node--f4ef0afd">
         <sc-for list="{{ termos }}" as="it" hint-placeholder-count="5">
           <div class="catalogo__node--69c1d7a0">
-            <sc-if value="{{ it.image }}"><div class="altino-product-media"><img src="{{ it.image }}" alt="{{ it.name }}" loading="lazy" decoding="async" /></div></sc-if><h3 class="catalogo__node--96c6ea0b">{{ it.name }}</h3>
+            <sc-if value="{{ it.image }}"><div class="altino-product-media"><img src="{{ it.image }}" alt="{{ it.name }}" loading="lazy" decoding="async" /></div></sc-if><sc-if value="{{ it.images }}"><div class="altino-product-media altino-slider" data-altino-slider data-slider-interval="3000" role="group" aria-roledescription="carrusel" aria-label="{{ it.name }}"><div class="altino-slider-track"><sc-for list="{{ it.images }}" as="ph" hint-placeholder-count="2"><figure class="altino-slide"><img class="altino-slider-img" src="{{ ph.src }}" alt="{{ ph.alt }}" loading="lazy" decoding="async" /></figure></sc-for></div></div></sc-if><h3 class="catalogo__node--96c6ea0b">{{ it.name }}</h3>
             <div class="catalogo__node--eabd157c">
               <sc-for list="{{ it.meta }}" as="m" hint-placeholder-count="2">
                 <span class="catalogo__node--7b862e5a">{{ m }}</span>
@@ -216,7 +216,7 @@
       <div class="catalogo__node--17b0d635">
         <sc-for list="{{ metodos }}" as="it" hint-placeholder-count="6">
           <div class="catalogo__node--69c1d7a0">
-            <sc-if value="{{ it.image }}"><div class="altino-product-media"><img src="{{ it.image }}" alt="{{ it.name }}" loading="lazy" decoding="async" /></div></sc-if><h3 class="catalogo__node--96c6ea0b">{{ it.name }}</h3>
+            <sc-if value="{{ it.image }}"><div class="altino-product-media"><img src="{{ it.image }}" alt="{{ it.name }}" loading="lazy" decoding="async" /></div></sc-if><sc-if value="{{ it.images }}"><div class="altino-product-media altino-slider" data-altino-slider data-slider-interval="3000" role="group" aria-roledescription="carrusel" aria-label="{{ it.name }}"><div class="altino-slider-track"><sc-for list="{{ it.images }}" as="ph" hint-placeholder-count="6"><figure class="altino-slide"><img class="altino-slider-img" src="{{ ph.src }}" alt="{{ ph.alt }}" loading="lazy" decoding="async" /></figure></sc-for></div></div></sc-if><h3 class="catalogo__node--96c6ea0b">{{ it.name }}</h3>
             <p class="catalogo__node--06540f23">{{ it.desc }}</p>
             <div class="catalogo__node--193997ee">
               <sc-for list="{{ it.prices }}" as="p" hint-placeholder-count="1">
@@ -271,6 +271,14 @@ class Component extends DCLogic {
   renderVals() {
     const wa = (n) => 'https://wa.me/573137119699?text=' + encodeURIComponent('Hola, quiero información sobre ' + n);
     const mk = (n) => [1, 2, 3].map((i) => ({ on: i <= n, off: i > n }));
+    // Normaliza una lista de nombres de archivo (it.imgs) a objetos {src, alt}
+    // para el slider reutilizable. Devuelve null si el producto tiene una sola imagen.
+    const buildImages = (it) => it.imgs
+      ? it.imgs.map((f, i, arr) => ({
+          src: 'assets/' + f,
+          alt: it.name + ' — Altino Café Noble' + (arr.length > 1 ? ' · vista ' + (i + 1) + ' de ' + arr.length : ''),
+        }))
+      : null;
 
     const cafes = [
       { name: 'Suave Lavado Colombiano', badge: 'Lavado', badgeColor: '#426E50', processDesc: 'Proceso lavado completo', notes: ['Panela', 'Chocolate', 'Miel'], acidez: 2, tostion: 2, dulzor: 2, acidezLabel: 'Media', tostionLabel: 'Media', dulzorLabel: 'Medio', prices: [{ size: '250 gr', price: '$30.500' }, { size: '500 gr', price: '$41.500' }, { size: '2.5 kg', price: '$152.000' }] },
@@ -299,12 +307,12 @@ class Component extends DCLogic {
     ].map((it) => ({ ...it, wa: wa(it.name) }));
 
     const termos = [
-      { name: 'Termo Prensa', image: 'assets/termo_prensa.png', meta: ['600 ml', '+8 horas', 'Verde · Gris'], desc: 'Incluye repuesto del empaque de la prensa.', price: '$80.000' },
-      { name: 'Termo Café Noble', image: 'assets/termo_cafe_noble.png', meta: ['510 ml', '+8 horas', 'Lila · Naranja · Negro · Gris'], desc: 'El clásico para el día a día.', price: '$60.000' },
-      { name: 'Termo Sport', image: 'assets/termo_sport.png', meta: ['800 ml', '+10 horas', 'Rosa · Gris · Rojo'], desc: 'Gran capacidad para acompañarte todo el día.', price: '$70.000' },
+      { name: 'Termo Prensa', imgs: ['termo_prensa_1.png', 'termo_prensa_2.png'], meta: ['600 ml', '+8 horas', 'Verde · Gris'], desc: 'Incluye repuesto del empaque de la prensa.', price: '$80.000' },
+      { name: 'Termo Café Noble', imgs: ['termo_cafe_noble_1.png', 'termo_cafe_noble_2.png', 'termo_cafe_noble_3.png'], meta: ['510 ml', '+8 horas', 'Lila · Naranja · Negro · Gris'], desc: 'El clásico para el día a día.', price: '$60.000' },
+      { name: 'Termo Sport', imgs: ['termo_sport.png', 'termo_sport_2.png'], meta: ['800 ml', '+10 horas', 'Rosa · Gris · Rojo'], desc: 'Gran capacidad para acompañarte todo el día.', price: '$70.000' },
       { name: 'Termo Tornillo', image: 'assets/termo_tornillo.png', meta: ['1000 ml', '+10 horas', 'Negro'], desc: 'Cierre hermético tipo tornillo.', price: '$65.000' },
       { name: 'Termo Café Portátil', image: 'assets/termo_portatil.png', meta: ['650 ml', '+8 horas', 'Gris metalizado'], desc: 'La tapa tiene forma de taza para servir el café.', price: '$50.000' },
-    ].map((it) => ({ ...it, wa: wa(it.name) }));
+    ].map((it) => ({ ...it, wa: wa(it.name), images: buildImages(it) }));
 
     const molinos = [
       { name: 'Molino Eléctrico', image: 'assets/molino_electrico.png', desc: 'Núcleo de molienda en cerámica de alta dureza · 5 niveles · Recargable · Incluye cepillo de limpieza.', price: '$110.000' },
@@ -318,8 +326,8 @@ class Component extends DCLogic {
       { name: 'Prensa Francesa', image: 'assets/prensa_francesa.png', desc: '350 ml · Vidrio resistente y polipropileno negro.', prices: [{ size: 'Unidad', price: '$26.000' }] },
       { name: 'Jarra Cold Brew', image: 'assets/jarra_cold_brew.png', desc: 'Cafetera jarra de 1 litro para Cold Brew.', prices: [{ size: 'Unidad', price: '$85.000' }] },
       { name: 'Espumador Eléctrico', image: 'assets/espumador.png', desc: 'Batidor eléctrico portátil, recargable.', prices: [{ size: 'Unidad', price: '$35.000' }] },
-      { name: 'Llavero Barista', image: 'assets/llavero_barista.png', desc: 'Llavero metálico con formas de utensilios barista.', prices: [{ size: 'Unidad', price: '$18.000' }] },
-    ].map((it) => ({ ...it, wa: wa(it.name) }));
+      { name: 'Llavero Barista', imgs: ['llavero_barista_1.png', 'llavero_barista_2.png', 'llavero_barista_3.png', 'llavero_barista_4.png', 'llavero_barista_5.png', 'llavero_barista_6.png'], desc: 'Llavero metálico con formas de utensilios barista.', prices: [{ size: 'Unidad', price: '$18.000' }] },
+    ].map((it) => ({ ...it, wa: wa(it.name), images: buildImages(it) }));
 
     return {
       cafes, estandar, complementos, termos, molinos, metodos,

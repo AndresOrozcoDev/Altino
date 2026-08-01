@@ -1,0 +1,22 @@
+{
+  "name": "Altino Café Noble — Aroma del Paramillo",
+  "short_name": "Altino Café",
+  "description": "Café de alta montaña cultivado a 1850 MSNM en Dabeiba, Antioquia.",
+  "start_url": "./index.html",
+  "display": "browser",
+  "background_color": "#FFF2D7",
+  "theme_color": "#426E50",
+  "lang": "es-CO",
+  "icons": [
+    {
+      "src": "assets/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

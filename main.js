@@ -91,8 +91,8 @@
 
   function initScrollReveal() {
     const groups = [
-      { selector: ".index__node--e4d5bf09", mode: "sides" },
-      { selector: ".origen__node--99f65fea", mode: "sides" }
+      { selector: ".index-pillars__card", mode: "sides" },
+      { selector: ".origen-stats__item", mode: "sides" }
     ];
 
     const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -361,10 +361,13 @@
         continue;
       }
 
-      if (name === "onClick" || name === "onChange" || name === "onSubmit" || name === "onInput" || name === "onBlur" || name === "onFocus") {
+      // El parser HTML normaliza los nombres de atributos a minúsculas
+      // (onSubmit -> onsubmit), así que la comparación debe hacerse en minúsculas.
+      const lowerName = name.toLowerCase();
+      if (lowerName === "onclick" || lowerName === "onchange" || lowerName === "onsubmit" || lowerName === "oninput" || lowerName === "onblur" || lowerName === "onfocus") {
         const handler = evaluateMustache(raw, scope);
         if (typeof handler === "function") {
-          const eventName = name.slice(2).toLowerCase();
+          const eventName = lowerName.slice(2);
           eventMap[eventName] = handler;
         }
         continue;

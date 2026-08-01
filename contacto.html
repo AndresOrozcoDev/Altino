@@ -7,39 +7,56 @@
 <meta name="description" content="Contáctanos por WhatsApp o Instagram. Precios especiales para distribuidores y cafeterías. Dabeiba, Antioquia.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://altino.cafe/contacto.html">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#426E50">
 <meta property="og:title" content="Contacto — Altino Café Noble">
 <meta property="og:description" content="Escríbenos por WhatsApp o Instagram. Distribuidores y cafeterías bienvenidos.">
-<meta property="og:image" content="assets/og-contacto.jpg">
+<meta property="og:image" content="https://altino.cafe/assets/og-contacto.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://altino.cafe/contacto.html">
 <meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Altino Café Noble">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contacto — Altino Café Noble">
 <meta name="twitter:description" content="Escríbenos por WhatsApp o Instagram. Distribuidores y cafeterías bienvenidos.">
+<meta name="twitter:image" content="https://altino.cafe/assets/og-contacto.jpg">
+<link rel="preload" href="./assets/fonts/nunito-700-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/nunito-800-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./styles.css">
 <script src="./main.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://altino.cafe/" },
+        { "@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://altino.cafe/contacto.html" }
+      ]
+    },
+    {
+      "@type": "ContactPage",
+      "name": "Contacto y Distribuidores | Altino Café Noble",
+      "url": "https://altino.cafe/contacto.html",
+      "inLanguage": "es-CO",
+      "about": { "@id": "https://altino.cafe/#organization" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <x-dc>
-<helmet>
-<title>Contacto y Distribuidores | Altino Café Noble</title>
-<meta name="description" content="Contáctanos por WhatsApp o Instagram. Precios especiales para distribuidores y cafeterías. Dabeiba, Antioquia.">
-<meta property="og:title" content="Contacto — Altino Café Noble">
-<meta property="og:description" content="Escríbenos por WhatsApp o Instagram. Distribuidores y cafeterías bienvenidos.">
-<meta property="og:image" content="assets/og-contacto.jpg">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="preload" href="./assets/fonts/nunito-700-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./assets/fonts/nunito-800-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-
-</helmet>
-
-<div class="contacto__node--0fc6528a">
+<div class="contacto-page">
   <header class="altino-header">
     <nav aria-label="Principal" class="altino-nav">
       <div class="altino-nav-inner">
         <a href="index.html" aria-label="Altino - Cafe Noble - Inicio" class="altino-brand">
-          <img src="assets/AF_LOGO%20CAFE%20ALTINO_verde.png" alt="Altino Cafe Noble - Aroma del Paramillo" width="6558" height="4664" decoding="async" />
+          <img src="assets/AF_LOGO_verde_web.png" alt="Altino Cafe Noble - Aroma del Paramillo" width="900" height="640" decoding="async" />
         </a>
         <div class="altino-links">
           <a href="index.html" class="altino-link">Inicio</a>
@@ -67,125 +84,125 @@
 
   <main>
     <!-- HERO -->
-    <section class="contacto__node--13fb4fcc" data-screen-label="Contacto Hero">
-      <div class="contacto__node--e19c9001"></div>
-      <div class="contacto__node--9335b153">
-        <span class="contacto__node--d1fbf664">Hablemos de café</span>
-        <h1 class="contacto__node--90ff48b0">Contacto</h1>
-        <p class="contacto__node--e4472287">¿Quieres hacer un pedido o distribuir Altino? Escríbenos y te respondemos directamente.</p>
+    <section class="contacto-hero" data-screen-label="Contacto Hero">
+      <div class="contacto-hero__bg"></div>
+      <div class="contacto-hero__container">
+        <span class="contacto-hero__kicker">Hablemos de café</span>
+        <h1 class="contacto-hero__title">Contacto</h1>
+        <p class="contacto-hero__subtitle">¿Quieres hacer un pedido o distribuir Altino? Escríbenos y te respondemos directamente.</p>
       </div>
     </section>
 
     <!-- FORM + DATOS -->
-    <section class="contacto__node--2fbaa0f7" data-screen-label="Formulario">
+    <section class="contacto-layout" data-screen-label="Formulario">
 
       <!-- FORM -->
-      <div class="contacto__node--b11efe61">
+      <div class="contacto-form-card">
         <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
-          <form class="contacto__node--760406cf" onSubmit="{{ onSubmit }}">
-            <h2 class="contacto__node--1eb06f92">Envíanos un mensaje</h2>
+          <form class="contacto-stack" onSubmit="{{ onSubmit }}">
+            <h2 class="contacto-form__title">Envíanos un mensaje</h2>
 
-            <label class="contacto__node--8e5e518b">Nombre completo *
+            <label class="contacto-form__label">Nombre completo *
               <input type="text" name="nombre" value="{{ nombre }}" onChange="{{ onNombre }}" placeholder="Tu nombre" class="{{ nombreInputClass }}"/>
-              <sc-if value="{{ errNombre }}" hint-placeholder-val="{{ false }}"><span class="contacto__node--c137a42b">Por favor ingresa tu nombre.</span></sc-if>
+              <sc-if value="{{ errNombre }}" hint-placeholder-val="{{ false }}"><span class="contacto-form__error">Por favor ingresa tu nombre.</span></sc-if>
             </label>
 
-            <label class="contacto__node--8e5e518b">Correo electrónico *
+            <label class="contacto-form__label">Correo electrónico *
               <input type="email" name="correo" value="{{ correo }}" onChange="{{ onCorreo }}" placeholder="tucorreo@ejemplo.com" class="{{ correoInputClass }}"/>
-              <sc-if value="{{ errCorreo }}" hint-placeholder-val="{{ false }}"><span class="contacto__node--c137a42b">Ingresa un correo válido.</span></sc-if>
+              <sc-if value="{{ errCorreo }}" hint-placeholder-val="{{ false }}"><span class="contacto-form__error">Ingresa un correo válido.</span></sc-if>
             </label>
 
-            <label class="contacto__node--8e5e518b">Teléfono (opcional)
-              <input class="contacto__node--0a57f370" type="tel" name="telefono" value="{{ telefono }}" onChange="{{ onTelefono }}" placeholder="(+57) 300 000 0000"/>
+            <label class="contacto-form__label">Teléfono (opcional)
+              <input class="contacto-form__input" type="tel" name="telefono" value="{{ telefono }}" onChange="{{ onTelefono }}" placeholder="(+57) 300 000 0000"/>
             </label>
 
-            <label class="contacto__node--8e5e518b">Mensaje *
-              <textarea name="mensaje" rows="4" value="{{ mensaje }}" onChange="{{ onMensaje }}" placeholder="Cuéntanos qué necesitas..." class="{{ mensajeInputClass }} contacto__node--b61b30f7"></textarea>
-              <sc-if value="{{ errMensaje }}" hint-placeholder-val="{{ false }}"><span class="contacto__node--c137a42b">Escribe un mensaje.</span></sc-if>
+            <label class="contacto-form__label">Mensaje *
+              <textarea name="mensaje" rows="4" value="{{ mensaje }}" onChange="{{ onMensaje }}" placeholder="Cuéntanos qué necesitas..." class="{{ mensajeInputClass }} contacto-form__textarea"></textarea>
+              <sc-if value="{{ errMensaje }}" hint-placeholder-val="{{ false }}"><span class="contacto-form__error">Escribe un mensaje.</span></sc-if>
             </label>
 
-            <label class="contacto__node--ba432aa8">
-              <input class="contacto__node--f01241a3" type="checkbox" checked="{{ esDistribuidor }}" onChange="{{ onToggle }}"/>
+            <label class="contacto-form__checkbox-label">
+              <input class="contacto-form__checkbox" type="checkbox" checked="{{ esDistribuidor }}" onChange="{{ onToggle }}"/>
               <span>Soy distribuidor / tengo una cafetería</span>
             </label>
 
-            <button class="contacto__node--fc1bfbc9" type="submit">Enviar mensaje</button>
-            <span class="contacto__node--860bb9db">Tu mensaje se abrirá en WhatsApp listo para enviar.</span>
+            <button class="contacto-form__submit" type="submit">Enviar mensaje</button>
+            <span class="contacto-form__hint">Tu mensaje se abrirá en WhatsApp listo para enviar.</span>
           </form>
         </sc-if>
 
         <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
-          <div class="contacto__node--c9c18e0f">
-            <div class="contacto__node--2c387c11">✓</div>
-            <h2 class="contacto__node--1eb06f92">¡Gracias, {{ nombre }}!</h2>
-            <p class="contacto__node--167624b1">Abrimos WhatsApp con tu mensaje. Si no se abrió, toca el botón para escribirnos directamente.</p>
-            <a class="contacto__node--ad8af34a" href="{{ composedWa }}" target="_blank" rel="noopener">Abrir WhatsApp</a>
-            <button class="contacto__node--da2c767d" onClick="{{ onReset }}">Enviar otro mensaje</button>
+          <div class="contacto-success">
+            <div class="contacto-success__icon">✓</div>
+            <h2 class="contacto-form__title">¡Gracias, {{ nombre }}!</h2>
+            <p class="contacto-success__text">Abrimos WhatsApp con tu mensaje. Si no se abrió, toca el botón para escribirnos directamente.</p>
+            <a class="contacto-success__cta" href="{{ composedWa }}" target="_blank" rel="noopener">Abrir WhatsApp</a>
+            <button class="contacto-success__reset" onClick="{{ onReset }}">Enviar otro mensaje</button>
           </div>
         </sc-if>
       </div>
 
       <!-- DATOS -->
-      <div class="contacto__node--760406cf">
-        <div class="contacto__node--47db7bad">
-          <div class="contacto__node--8662c229"></div>
-          <h2 class="contacto__node--8e5470a9">Datos de contacto</h2>
-          <a class="contacto__node--d9b4af87" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <span class="contacto__node--959678b8"><img src="assets/icon-whatsapp.png" class="altino-icon-png altino-icon-png--contact" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /></span>
-            <span class="contacto__node--b5b5ec1d"><span class="contacto__node--e46bda18">WhatsApp</span><span class="contacto__node--45632e6c">(+57) 313 711 9699</span></span>
+      <div class="contacto-stack">
+        <div class="contacto-info-card">
+          <div class="contacto-info-card__texture"></div>
+          <h2 class="contacto-info-card__title">Datos de contacto</h2>
+          <a class="contacto-info-card__item" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <span class="contacto-info-card__icon"><img src="assets/icon-whatsapp.png" class="altino-icon-png altino-icon-png--contact" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /></span>
+            <span class="contacto-info-card__detail"><span class="contacto-info-card__label">WhatsApp</span><span class="contacto-info-card__value">(+57) 313 711 9699</span></span>
           </a>
-          <a class="contacto__node--d9b4af87" href="https://instagram.com/altino.cafe" target="_blank" rel="noopener" aria-label="Instagram">
-            <span class="contacto__node--959678b8"><img src="assets/icon-instagram.png" class="altino-icon-png altino-icon-png--contact" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /></span>
-            <span class="contacto__node--b5b5ec1d"><span class="contacto__node--e46bda18">Instagram</span><span class="contacto__node--45632e6c">@altino.cafe</span></span>
+          <a class="contacto-info-card__item" href="https://instagram.com/altino.cafe" target="_blank" rel="noopener" aria-label="Instagram">
+            <span class="contacto-info-card__icon"><img src="assets/icon-instagram.png" class="altino-icon-png altino-icon-png--contact" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /></span>
+            <span class="contacto-info-card__detail"><span class="contacto-info-card__label">Instagram</span><span class="contacto-info-card__value">@altino.cafe</span></span>
           </a>
-          <div class="contacto__node--738f52f8">
-            <span class="contacto__node--959678b8"><img src="assets/icon-ubicacion.png" class="altino-icon-png altino-icon-png--contact" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /></span>
-            <span class="contacto__node--b5b5ec1d"><span class="contacto__node--e46bda18">Ubicación</span><span class="contacto__node--45632e6c">Dabeiba, Antioquia, Colombia</span></span>
+          <div class="contacto-info-card__row">
+            <span class="contacto-info-card__icon"><img src="assets/icon-ubicacion.png" class="altino-icon-png altino-icon-png--contact" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /></span>
+            <span class="contacto-info-card__detail"><span class="contacto-info-card__label">Ubicación</span><span class="contacto-info-card__value">Dabeiba, Antioquia, Colombia</span></span>
           </div>
         </div>
 
-        <div class="contacto__node--d9d3bf76">
-          <span class="contacto__node--93be8d90">Distribuidores</span>
-          <h3 class="contacto__node--a965762a">¿Tienes una cafetería?</h3>
-          <p class="contacto__node--cd9a5e68">Precios especiales y catálogo exclusivo para distribuidores y cafeterías. Marca la casilla del formulario o escríbenos directamente.</p>
-          <a class="contacto__node--a2250973" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20ser%20distribuidor%20de%20Altino" target="_blank" rel="noopener">Quiero ser distribuidor →</a>
+        <div class="contacto-dist-card">
+          <span class="contacto-dist-card__badge">Distribuidores</span>
+          <h3 class="contacto-dist-card__title">¿Tienes una cafetería?</h3>
+          <p class="contacto-dist-card__text">Precios especiales y catálogo exclusivo para distribuidores y cafeterías. Marca la casilla del formulario o escríbenos directamente.</p>
+          <a class="contacto-dist-card__cta" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20ser%20distribuidor%20de%20Altino" target="_blank" rel="noopener">Quiero ser distribuidor →</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="contacto__node--73a7467d">
-    <div class="contacto__node--e19df6da"></div>
-    <div class="contacto__node--ce59ea5c">
-      <div class="contacto__node--e09e77db">
-        <div class="contacto__node--c276d821">
-          <img class="contacto__node--9674a507" src="assets/AF_LOGO%20CAFE%20ALTINO_beige.png" alt="Altino Cafe Noble - Aroma del Paramillo" width="6557" height="4664" loading="lazy" decoding="async" />
-          <p class="contacto__node--d2012c13">Dabeiba, Antioquia, Colombia.<br>1850 MSNM - Nudo del Paramillo.</p>
+  <footer class="contacto-footer">
+    <div class="contacto-footer__bg"></div>
+    <div class="contacto-footer__container">
+      <div class="contacto-footer__grid">
+        <div class="contacto-footer__brand">
+          <img class="contacto-footer__logo" src="assets/AF_LOGO_beige_web.png" alt="Altino Cafe Noble - Aroma del Paramillo" width="900" height="640" loading="lazy" decoding="async" />
+          <p class="contacto-footer__address">Dabeiba, Antioquia, Colombia.<br>1850 MSNM - Nudo del Paramillo.</p>
         </div>
-        <div class="contacto__node--25ae862b">
-          <h4 class="contacto__node--a1b2729f">Navegación</h4>
-          <a class="contacto__node--1ba347d2" href="index.html">Inicio</a>
-          <a class="contacto__node--1ba347d2" href="origen.html">Origen</a>
-          <a class="contacto__node--1ba347d2" href="catalogo.html">Catálogo</a>
-          <a class="contacto__node--1ba347d2" href="contacto.html">Contacto</a>
-          <a class="contacto__node--1ba347d2" href="legal.html">Términos y Privacidad</a>
+        <div class="contacto-footer__col">
+          <h4 class="contacto-footer__heading">Navegación</h4>
+          <a class="contacto-footer__link" href="index.html">Inicio</a>
+          <a class="contacto-footer__link" href="origen.html">Origen</a>
+          <a class="contacto-footer__link" href="catalogo.html">Catálogo</a>
+          <a class="contacto-footer__link" href="contacto.html">Contacto</a>
+          <a class="contacto-footer__link" href="legal.html">Términos y Privacidad</a>
         </div>
-        <div class="contacto__node--25ae862b">
-          <h4 class="contacto__node--a1b2729f">Contacto</h4>
-          <a class="contacto__node--8509b6b8" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><img src="assets/icon-whatsapp.png" class="altino-icon-png" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /> (+57) 313 711 9699</a>
-          <a class="contacto__node--8509b6b8" href="https://instagram.com/altino.cafe" target="_blank" rel="noopener" aria-label="Instagram de Altino"><img src="assets/icon-instagram.png" class="altino-icon-png" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /> @altino.cafe</a>
-          <span class="contacto__node--6385c311"><img src="assets/icon-ubicacion.png" class="altino-icon-png" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /> Dabeiba, Antioquia</span>
+        <div class="contacto-footer__col">
+          <h4 class="contacto-footer__heading">Contacto</h4>
+          <a class="contacto-footer__contact-link" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20Altino" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><img src="assets/icon-whatsapp.png" class="altino-icon-png" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /> (+57) 313 711 9699</a>
+          <a class="contacto-footer__contact-link" href="https://instagram.com/altino.cafe" target="_blank" rel="noopener" aria-label="Instagram de Altino"><img src="assets/icon-instagram.png" class="altino-icon-png" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /> @altino.cafe</a>
+          <span class="contacto-footer__location"><img src="assets/icon-ubicacion.png" class="altino-icon-png" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /> Dabeiba, Antioquia</span>
         </div>
-        <div class="contacto__node--f85c1751">
-          <h4 class="contacto__node--6b9ee9ca">Distribuidores</h4>
-          <p class="contacto__node--466fb138">¿Haces crecer tu negocio con café de calidad?</p>
-          <p class="contacto__node--f158b208">Tenemos precios especiales para distribuidores y cafeterías. Escríbenos y recibe nuestro catálogo exclusivo.</p>
-          <a class="contacto__node--78d0cd8d" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20ser%20distribuidor%20de%20Altino" target="_blank" rel="noopener">Quiero ser distribuidor →</a>
+        <div class="contacto-footer__distributors">
+          <h4 class="contacto-footer__distributors-heading">Distribuidores</h4>
+          <p class="contacto-footer__distributors-lead">¿Haces crecer tu negocio con café de calidad?</p>
+          <p class="contacto-footer__distributors-text">Tenemos precios especiales para distribuidores y cafeterías. Escríbenos y recibe nuestro catálogo exclusivo.</p>
+          <a class="contacto-footer__distributors-cta" href="https://wa.me/573137119699?text=Hola%2C%20quiero%20ser%20distribuidor%20de%20Altino" target="_blank" rel="noopener">Quiero ser distribuidor →</a>
         </div>
       </div>
-      <div class="contacto__node--3a3c7795">
-        <span class="contacto__node--0f57465a">© 2025 Altino Café Noble. Todos los derechos reservados.</span>
-        <span class="contacto__node--024c8ee1">Aroma del Paramillo</span>
+      <div class="contacto-footer__bottom">
+        <span class="contacto-footer__copyright">© 2025 Altino Café Noble. Todos los derechos reservados.</span>
+        <span class="contacto-footer__tagline">Aroma del Paramillo</span>
       </div>
     </div>
   </footer>

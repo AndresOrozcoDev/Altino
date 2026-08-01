@@ -4,7 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
-    <link rel="canonical" href="https://altino.cafe/index.html" />
+    <link rel="canonical" href="https://altino.cafe/" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="theme-color" content="#426E50" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./main.js" defer></script>
     <title>Altino Café Noble — Aroma del Paramillo | Dabeiba, Antioquia</title>
@@ -17,9 +22,10 @@
       property="og:description"
       content="Café de origen colombiano a 1850 MSNM. Lavado, Honey, Natural y Fermentación Extendida."
     />
-    <meta property="og:url" content="https://altino.cafe/index.html" />
+    <meta property="og:url" content="https://altino.cafe/" />
     <meta property="og:locale" content="es_CO" />
-    <meta property="og:image" content="assets/og-home.jpg" />
+    <meta property="og:site_name" content="Altino Café Noble" />
+    <meta property="og:image" content="https://altino.cafe/assets/og-home.jpg" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Altino — Café Noble de Alta Montaña" />
@@ -27,56 +33,104 @@
       name="twitter:description"
       content="Café de origen colombiano a 1850 MSNM. Lavado, Honey, Natural y Fermentación Extendida."
     />
+    <meta name="twitter:image" content="https://altino.cafe/assets/og-home.jpg" />
     <link rel="preload" href="./assets/fonts/nunito-700-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="./assets/fonts/nunito-800-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://altino.cafe/#organization",
+          "name": "Altino Café Noble",
+          "url": "https://altino.cafe/",
+          "logo": "https://altino.cafe/assets/logo-header.png",
+          "slogan": "Aroma del Paramillo",
+          "sameAs": ["https://instagram.com/altino.cafe"],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+57-313-711-9699",
+            "contactType": "customer service",
+            "availableLanguage": "es"
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://altino.cafe/#localbusiness",
+          "name": "Altino Café Noble",
+          "description": "Café de alta montaña cultivado a 1850 MSNM en Dabeiba, Antioquia, en las laderas del Nudo del Paramillo.",
+          "image": "https://altino.cafe/assets/og-home.jpg",
+          "url": "https://altino.cafe/",
+          "telephone": "+573137119699",
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dabeiba",
+            "addressRegion": "Antioquia",
+            "addressCountry": "CO"
+          },
+          "parentOrganization": { "@id": "https://altino.cafe/#organization" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://altino.cafe/#website",
+          "url": "https://altino.cafe/",
+          "name": "Altino Café Noble",
+          "inLanguage": "es-CO",
+          "publisher": { "@id": "https://altino.cafe/#organization" }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div>
       <div>
-        <div class="index__node--33c8738b"
+        <div class="index-page"
          
         >
           <div>
-            <header class="index__node--fc6b60e1"
+            <header class="index-header"
              
             >
-              <nav class="index__node--e0dae081"
+              <nav class="index-header__nav"
                 aria-label="Principal"
                
               >
-                <div class="index__node--11b1e814"
+                <div class="index-header__inner"
                  
                 >
-                  <a class="index__node--d08214a4"
+                  <a class="index-header__brand"
                     href="index.html"
                     aria-label="Altino — Café Noble — Inicio"
                    
-                    ><img class="index__node--7e2820fe"
+                    ><img class="index-header__logo"
                       src="./assets/logo-header.png" width="900" height="648" decoding="async"
                       alt="Altino Café Noble — Aroma del Paramillo"
                      
                   /></a>
-                  <div class="index__node--018c9933">
-                    <a class="index__node--40f674c4"
+                  <div class="index-header__links">
+                    <a class="index-header__link--active"
                       href="index.html"
                       aria-current="page"
                      
-                      >Inicio<span class="index__node--e409f9f9"
+                      >Inicio<span class="index-header__link-underline"
                        
                       ></span></a
                     ><a
                       href="origen.html"
-                      class="scp3 index__node--0cc1d3c2"
+                      class="u-hover-green index-header__link"
                      
                       >Origen</a
                     ><a
                       href="catalogo.html"
-                      class="scp3 index__node--0cc1d3c2"
+                      class="u-hover-green index-header__link"
                      
                       >Catálogo</a
                     ><a
                       href="contacto.html"
-                      class="scp3 index__node--0cc1d3c2"
+                      class="u-hover-green index-header__link"
                      
                       >Contacto</a
                     ><a
@@ -84,7 +138,7 @@
                       target="_blank"
                       rel="noopener"
                       aria-label="Pedir por WhatsApp"
-                      class="scp5 index__node--6a18e480"
+                      class="u-hover-dark index-header__whatsapp"
                      
                       ><span>✆</span> Pedir por WhatsApp</a
                     >
@@ -94,45 +148,45 @@
             </header>
           </div>
           <main>
-            <section class="index__node--45ff4614"
+            <section class="index-hero"
              
             >
-              <div class="index__node--a304e078"
+              <div class="index-hero__bg"
                
               ></div>
-              <div class="index__node--7fca794d"
+              <div class="index-hero__container"
                
               >
-                <div class="index__node--71bd713d"
+                <div class="index-hero__content"
                  
                 >
-                  <img class="index__node--95273575"
+                  <img class="index-hero__logo"
                     src="./assets/logo-hero.png" width="900" height="648" decoding="async"
                     alt="Altino Café Noble — Aroma del Paramillo"
                    
                   />
-                  <h1 class="index__node--401d3362"
+                  <h1 class="index-hero__title"
                    
                   >
                     Un café noble
                   </h1>
-                  <p class="index__node--1de2eea3"
+                  <p class="index-hero__subtitle"
                    
                   >
                     Nacido a 1850 metros, en las laderas del Nudo del Paramillo.
                     Cada grano cuenta la historia de Dabeiba.
                   </p>
-                  <div class="index__node--543b796b"
+                  <div class="index-hero__actions"
                    
                   >
                     <a
                       href="catalogo.html"
-                      class="scp0 index__node--e52f03b6"
+                      class="u-hover-lift index-hero__cta--primary"
                      
                       >Descubre nuestros cafés</a
                     ><a
                       href="origen.html"
-                      class="scp1 index__node--51328ef9"
+                      class="u-hover-invert-cream index-hero__cta--secondary"
                      
                       >Conoce nuestro origen</a
                     >
@@ -140,13 +194,13 @@
                 </div>
               </div>
             </section>
-            <section class="index__node--0dbe181a"
+            <section class="index-section"
              
             >
-              <div class="index__node--18d4a79b"
+              <div class="index-pillars__grid"
                
               >
-                <div class="index__node--e4d5bf09"
+                <div class="index-pillars__card"
                  
                 >
                   <svg
@@ -163,12 +217,12 @@
                     <path d="M4 34 L15 14 L21 24 L27 11 L36 34 Z"></path>
                     <path d="M12 19 L18 19" opacity="0.5"></path>
                   </svg>
-                  <h3 class="index__node--6687b263"
-                   
+                  <h2 class="index-pillars__title"
+
                   >
                     Altitud
-                  </h3>
-                  <p class="index__node--84b66e3b"
+                  </h2>
+                  <p class="index-pillars__text"
                    
                   >
                     1850 MSNM. La altura que le da a nuestro café suavidad
@@ -176,7 +230,7 @@
                     en tierra baja.
                   </p>
                 </div>
-                <div class="index__node--e4d5bf09"
+                <div class="index-pillars__card"
                  
                 >
                   <svg
@@ -195,12 +249,12 @@
                     ></path>
                     <circle cx="20" cy="16" r="4"></circle>
                   </svg>
-                  <h3 class="index__node--6687b263"
-                   
+                  <h2 class="index-pillars__title"
+
                   >
                     Origen
-                  </h3>
-                  <p class="index__node--84b66e3b"
+                  </h2>
+                  <p class="index-pillars__text"
                    
                   >
                     Son 3 orígenes en Dabeiba Antioquia, Finca los socios y
@@ -210,7 +264,7 @@
                     biodiversidad, historia y resiliencia en cada cosecha.
                   </p>
                 </div>
-                <div class="index__node--e4d5bf09"
+                <div class="index-pillars__card"
                  
                 >
                   <svg
@@ -233,12 +287,12 @@
                     ></ellipse>
                     <path d="M14 26 C18 22 22 18 26 14" opacity="0.7"></path>
                   </svg>
-                  <h3 class="index__node--6687b263"
-                   
+                  <h2 class="index-pillars__title"
+
                   >
                     Nobleza
-                  </h3>
-                  <p class="index__node--84b66e3b"
+                  </h2>
+                  <p class="index-pillars__text"
                    
                   >
                     Cultivamos con rigor técnico y respeto absoluto por la
@@ -247,21 +301,21 @@
                 </div>
               </div>
             </section>
-            <section class="index__node--0eb789f9">
-              <div class="index__node--c285da2d"
+            <section class="index-products">
+              <div class="index-container"
                
               >
-                <div class="index__node--92670865"
+                <div class="index-products__header"
                  
                 >
-                  <div class="index__node--916b2686"
+                  <div class="index-products__heading"
                    
                   >
-                    <span class="index__node--3c05d1b1"
+                    <span class="index-products__kicker"
                      
                       >Nuestros cafés</span
                     >
-                    <h2 class="index__node--569fe762"
+                    <h2 class="index-products__title"
                      
                     >
                       Café Noble para cada momento
@@ -269,71 +323,71 @@
                   </div>
                   <a
                     href="catalogo.html"
-                    class="scp2 index__node--a5fe7d34"
+                    class="u-hover-red index-products__link"
                    
                     >Ver catálogo completo →</a
                   >
                 </div>
-                <div class="index__node--398ea277"
+                <div class="index-products__grid"
                  
                 >
                   <div>
                     <div
-                      class="scp6 index__node--fad10884"
+                      class="u-hover-raise-card index-product-card"
                      
                     >
-                      <div class="index__node--53fdcf5a"
+                      <div class="index-product-card__media"
                        
                       >
-                        <div class="index__node--7735e368"
+                        <div class="index-product-card__overlay"
                          
                         ></div>
-                        <span class="index__node--8a5d1218">
+                        <span class="index-product-card__photo">
                           <img src="assets/cafe_lavado.png" alt="Altino Café Noble — Lavado" width="1024" height="1024" loading="lazy" decoding="async" />
                         </span
-                        ><span class="index__node--4110dfa4"
+                        ><span class="index-product-card__badge"
                          
                           >Lavado</span
                         >
                       </div>
-                      <div class="index__node--2ebf64cf"
+                      <div class="index-product-card__body"
                        
                       >
-                        <div class="index__node--8317ae0b"
+                        <div class="index-product-card__header"
                          
                         >
-                          <h3 class="index__node--f8bcfe3b"
+                          <h3 class="index-product-card__name"
                            
                           >
                             Suave Lavado Colombiano
                           </h3>
                         </div>
-                        <div class="index__node--cadf6283">
-                          <span class="index__node--5dd42e06"
+                        <div class="index-product-card__notes">
+                          <span class="index-product-card__note"
                            
                             >Panela</span
-                          ><span class="index__node--5dd42e06"
+                          ><span class="index-product-card__note"
                            
                             >Chocolate</span
-                          ><span class="index__node--5dd42e06"
+                          ><span class="index-product-card__note"
                            
                             >Miel</span
                           >
                         </div>
-                        <div class="index__node--d6750c62"
+                        <div class="index-product-card__pricing"
                          
                         >
-                          <span class="index__node--7e9adc4b"
+                          <span class="index-product-card__price-label"
                            
                             >Desde · 250 gr</span
-                          ><span class="index__node--ed60263e"
+                          ><span class="index-product-card__price"
                            
                             >$30.500</span
                           >
                         </div>
                         <a
                           href="catalogo.html"
-                          class="scp2 index__node--44a83024"
+                          class="u-hover-red index-product-card__link"
                          
                           >Ver en catálogo →</a
                         >
@@ -342,61 +396,61 @@
                   </div>
                   <div>
                     <div
-                      class="scp6 index__node--fad10884"
+                      class="u-hover-raise-card index-product-card"
                      
                     >
-                      <div class="index__node--53fdcf5a"
+                      <div class="index-product-card__media"
                        
                       >
-                        <div class="index__node--7735e368"
+                        <div class="index-product-card__overlay"
                          
                         ></div>
-                        <span class="index__node--8a5d1218">
+                        <span class="index-product-card__photo">
                           <img src="assets/cafe_fermentado.png" alt="Altino Café Noble — Fermentación" width="1024" height="1024" loading="lazy" decoding="async" />
                         </span
-                        ><span class="index__node--4110dfa4"
+                        ><span class="index-product-card__badge"
                          
                           >Fermentación</span
                         >
                       </div>
-                      <div class="index__node--2ebf64cf"
+                      <div class="index-product-card__body"
                        
                       >
-                        <div class="index__node--8317ae0b"
+                        <div class="index-product-card__header"
                          
                         >
-                          <h3 class="index__node--f8bcfe3b"
+                          <h3 class="index-product-card__name"
                            
                           >
                             Fermentación Extendida
                           </h3>
                         </div>
-                        <div class="index__node--cadf6283">
-                          <span class="index__node--5dd42e06"
+                        <div class="index-product-card__notes">
+                          <span class="index-product-card__note"
                            
                             >Chocolate amargo</span
-                          ><span class="index__node--5dd42e06"
+                          ><span class="index-product-card__note"
                            
                             >Avellana</span
-                          ><span class="index__node--5dd42e06"
+                          ><span class="index-product-card__note"
                            
                             >Frutos tropicales</span
                           >
                         </div>
-                        <div class="index__node--d6750c62"
+                        <div class="index-product-card__pricing"
                          
                         >
-                          <span class="index__node--7e9adc4b"
+                          <span class="index-product-card__price-label"
                            
                             >Desde · 250 gr</span
-                          ><span class="index__node--ed60263e"
+                          ><span class="index-product-card__price"
                            
                             >$37.000</span
                           >
                         </div>
                         <a
                           href="catalogo.html"
-                          class="scp2 index__node--44a83024"
+                          class="u-hover-red index-product-card__link"
                          
                           >Ver en catálogo →</a
                         >
@@ -405,61 +459,61 @@
                   </div>
                   <div>
                     <div
-                      class="scp6 index__node--fad10884"
+                      class="u-hover-raise-card index-product-card"
                      
                     >
-                      <div class="index__node--53fdcf5a"
+                      <div class="index-product-card__media"
                        
                       >
-                        <div class="index__node--7735e368"
+                        <div class="index-product-card__overlay"
                          
                         ></div>
-                        <span class="index__node--8a5d1218">
+                        <span class="index-product-card__photo">
                           <img src="assets/cafe_honey.png" alt="Altino Café Noble — Honey" width="1024" height="1024" loading="lazy" decoding="async" />
                         </span
-                        ><span class="index__node--a70701bc"
+                        ><span class="index-product-card__badge--honey"
                          
                           >Honey</span
                         >
                       </div>
-                      <div class="index__node--2ebf64cf"
+                      <div class="index-product-card__body"
                        
                       >
-                        <div class="index__node--8317ae0b"
+                        <div class="index-product-card__header"
                          
                         >
-                          <h3 class="index__node--f8bcfe3b"
+                          <h3 class="index-product-card__name"
                            
                           >
                             Honey
                           </h3>
                         </div>
-                        <div class="index__node--cadf6283">
-                          <span class="index__node--5dd42e06"
+                        <div class="index-product-card__notes">
+                          <span class="index-product-card__note"
                            
                             >Frutos rojos</span
-                          ><span class="index__node--5dd42e06"
+                          ><span class="index-product-card__note"
                            
                             >Miel</span
-                          ><span class="index__node--5dd42e06"
+                          ><span class="index-product-card__note"
                            
                             >Lima dulce</span
                           >
                         </div>
-                        <div class="index__node--d6750c62"
+                        <div class="index-product-card__pricing"
                          
                         >
-                          <span class="index__node--7e9adc4b"
+                          <span class="index-product-card__price-label"
                            
                             >Desde · 250 gr</span
-                          ><span class="index__node--ed60263e"
+                          ><span class="index-product-card__price"
                            
                             >$37.000</span
                           >
                         </div>
                         <a
                           href="catalogo.html"
-                          class="scp2 index__node--44a83024"
+                          class="u-hover-red index-product-card__link"
                          
                           >Ver en catálogo →</a
                         >
@@ -468,58 +522,58 @@
                   </div>
                   <div>
                     <div
-                      class="scp6 index__node--fad10884"
+                      class="u-hover-raise-card index-product-card"
                      
                     >
-                      <div class="index__node--53fdcf5a"
+                      <div class="index-product-card__media"
                        
                       >
-                        <div class="index__node--7735e368"
+                        <div class="index-product-card__overlay"
                          
                         ></div>
-                        <span class="index__node--8a5d1218">
+                        <span class="index-product-card__photo">
                           <img src="assets/cafe_natural.png" alt="Altino Café Noble — Natural" width="1024" height="1024" loading="lazy" decoding="async" />
                         </span
-                        ><span class="index__node--fe5dba43"
+                        ><span class="index-product-card__badge--natural"
                          
                           >Natural</span
                         >
                       </div>
-                      <div class="index__node--2ebf64cf"
+                      <div class="index-product-card__body"
                        
                       >
-                        <div class="index__node--8317ae0b"
+                        <div class="index-product-card__header"
                          
                         >
-                          <h3 class="index__node--f8bcfe3b"
+                          <h3 class="index-product-card__name"
                            
                           >
                             Natural
                           </h3>
                         </div>
-                        <div class="index__node--cadf6283">
-                          <span class="index__node--5dd42e06"
+                        <div class="index-product-card__notes">
+                          <span class="index-product-card__note"
                            
                             >Fruta madura</span
-                          ><span class="index__node--5dd42e06"
+                          ><span class="index-product-card__note"
                            
                             >Toque vinoso</span
                           >
                         </div>
-                        <div class="index__node--d6750c62"
+                        <div class="index-product-card__pricing"
                          
                         >
-                          <span class="index__node--7e9adc4b"
+                          <span class="index-product-card__price-label"
                            
                             >Desde · 250 gr</span
-                          ><span class="index__node--ed60263e"
+                          ><span class="index-product-card__price"
                            
                             >$40.000</span
                           >
                         </div>
                         <a
                           href="catalogo.html"
-                          class="scp2 index__node--44a83024"
+                          class="u-hover-red index-product-card__link"
                          
                           >Ver en catálogo →</a
                         >
@@ -529,20 +583,20 @@
                 </div>
               </div>
             </section>
-            <section class="index__node--f249560d"
+            <section class="index-quote"
              
             >
-              <div class="index__node--faa5286d"
+              <div class="index-quote__bg"
                
               ></div>
-              <div class="index__node--2cd5b0b9"
+              <div class="index-quote__container"
                
               >
-                <span class="index__node--b142d983"
+                <span class="index-quote__mark"
                  
                   >“</span
                 >
-                <p class="index__node--dc545c5c"
+                <p class="index-quote__text"
                  
                 >
                   Un café que se inspira en la majestuosidad de las montañas que
@@ -550,112 +604,112 @@
                 </p>
               </div>
             </section>
-            <section class="index__node--0dbe181a"
+            <section class="index-section"
              
             >
-              <div class="index__node--33f8a77c"
+              <div class="index-journey__header"
                
               >
-                <span class="index__node--94d9d56a"
+                <span class="index-journey__kicker"
                  
                   >El recorrido</span
                 >
-                <h2 class="index__node--f0adf9c0"
+                <h2 class="index-journey__title"
                  
                 >
                   Del campo a tu taza
                 </h2>
               </div>
-              <div class="index__node--4fa7d594"
+              <div class="index-journey__grid"
                
               >
-                <div class="index__node--bc24a6d3"
+                <div class="index-journey__step"
                  
                 >
-                  <span class="index__node--3a25e460"
+                  <span class="index-journey__number"
                    
                     >01</span
                   >
-                  <h3 class="index__node--b5c33fd3"
+                  <h3 class="index-journey__step-title"
                    
                   >
                     Cultivo
                   </h3>
-                  <p class="index__node--22a893a4"
+                  <p class="index-journey__step-text"
                    
                   >
                     Variedades seleccionadas a 1850 MSNM en un ecosistema
                     biodiverso.
                   </p>
                 </div>
-                <div class="index__node--bc24a6d3"
+                <div class="index-journey__step"
                  
                 >
-                  <span class="index__node--3a25e460"
+                  <span class="index-journey__number"
                    
                     >02</span
                   >
-                  <h3 class="index__node--b5c33fd3"
+                  <h3 class="index-journey__step-title"
                    
                   >
                     Cosecha
                   </h3>
-                  <p class="index__node--22a893a4"
+                  <p class="index-journey__step-text"
                    
                   >
                     Selección manual en cerezas maduras. Sin atajos.
                   </p>
                 </div>
-                <div class="index__node--bc24a6d3"
+                <div class="index-journey__step"
                  
                 >
-                  <span class="index__node--3a25e460"
+                  <span class="index-journey__number"
                    
                     >03</span
                   >
-                  <h3 class="index__node--b5c33fd3"
+                  <h3 class="index-journey__step-title"
                    
                   >
                     Beneficio
                   </h3>
-                  <p class="index__node--22a893a4"
+                  <p class="index-journey__step-text"
                    
                   >
                     Cuatro procesos: Lavado, Fermentación Extendida, Honey y
                     Natural.
                   </p>
                 </div>
-                <div class="index__node--bc24a6d3"
+                <div class="index-journey__step"
                  
                 >
-                  <span class="index__node--3a25e460"
+                  <span class="index-journey__number"
                    
                     >04</span
                   >
-                  <h3 class="index__node--b5c33fd3"
+                  <h3 class="index-journey__step-title"
                    
                   >
                     Tostión
                   </h3>
-                  <p class="index__node--22a893a4"
+                  <p class="index-journey__step-text"
                    
                   >
                     Tostión media para preservar los atributos del terroir.
                   </p>
                 </div>
-                <div class="index__node--bc24a6d3"
+                <div class="index-journey__step"
                  
                 >
-                  <span class="index__node--3a25e460"
+                  <span class="index-journey__number"
                    
                     >05</span
                   >
-                  <h3 class="index__node--b5c33fd3"
+                  <h3 class="index-journey__step-title"
                    
                   >
                     En tu mesa
                   </h3>
-                  <p class="index__node--22a893a4"
+                  <p class="index-journey__step-text"
                    
                   >
                     Drips, molinos y métodos para prepararlo como merece.
@@ -663,14 +717,14 @@
                 </div>
               </div>
             </section>
-            <section class="index__node--d00f8127">
-              <div class="index__node--c285da2d"
+            <section class="index-instagram">
+              <div class="index-container"
                
               >
-                <div class="index__node--7eb2ea0e"
+                <div class="index-instagram__header"
                  
                 >
-                  <h2 class="index__node--be5030e0"
+                  <h2 class="index-instagram__title"
                    
                   >
                     Síguenos en Instagram
@@ -679,65 +733,65 @@
                     href="https://instagram.com/altino.cafe"
                     target="_blank"
                     rel="noopener"
-                    class="scp3 index__node--bfc01f2f"
+                    class="u-hover-green index-instagram__handle"
                    
                     >@altino.cafe</a
                   >
                 </div>
-                <div class="index__node--68c0b3a5"
+                <div class="index-instagram__grid"
                  
                 >
-                  <div class="index__node--cfdd2d9c"
+                  <div class="index-instagram__tile"
                    
                   >
-                    <div class="index__node--625818fb"
+                    <div class="index-instagram__tile-overlay"
                      
                     ></div>
-                    <span class="index__node--8dbd366d"
+                    <span class="index-instagram__tile-label"
                      
                       >[ cafetal ]</span
                     >
                   </div>
-                  <div class="index__node--cfdd2d9c"
+                  <div class="index-instagram__tile"
                    
                   >
-                    <div class="index__node--625818fb"
+                    <div class="index-instagram__tile-overlay"
                      
                     ></div>
-                    <span class="index__node--8dbd366d"
+                    <span class="index-instagram__tile-label"
                      
                       >[ cosecha ]</span
                     >
                   </div>
-                  <div class="index__node--cfdd2d9c"
+                  <div class="index-instagram__tile"
                    
                   >
-                    <div class="index__node--625818fb"
+                    <div class="index-instagram__tile-overlay"
                      
                     ></div>
-                    <span class="index__node--8dbd366d"
+                    <span class="index-instagram__tile-label"
                      
                       >[ proceso ]</span
                     >
                   </div>
-                  <div class="index__node--cfdd2d9c"
+                  <div class="index-instagram__tile"
                    
                   >
-                    <div class="index__node--625818fb"
+                    <div class="index-instagram__tile-overlay"
                      
                     ></div>
-                    <span class="index__node--8dbd366d"
+                    <span class="index-instagram__tile-label"
                      
                       >[ comunidad ]</span
                     >
                   </div>
                 </div>
-                <div class="index__node--9096bdde">
+                <div class="index-instagram__cta-wrap">
                   <a
                     href="https://instagram.com/altino.cafe"
                     target="_blank"
                     rel="noopener"
-                    class="scp4 index__node--2af98765"
+                    class="u-hover-fill-green index-instagram__cta"
                    
                     >Ver más en Instagram →</a
                   >
@@ -746,68 +800,68 @@
             </section>
           </main>
           <div>
-            <footer class="index__node--543a0645"
+            <footer class="index-footer"
              
             >
-              <div class="index__node--a5050e5b"
+              <div class="index-footer__bg"
                
               ></div>
-              <div class="index__node--5a0d4e8e"
+              <div class="index-footer__container"
                
               >
-                <div class="index__node--a0065353"
+                <div class="index-footer__grid"
                  
                 >
-                  <div class="index__node--b6231e0e"
+                  <div class="index-footer__brand"
                    
                   >
-                    <img class="index__node--496760cc"
+                    <img class="index-footer__logo"
                       src="./assets/logo-footer.png" width="900" height="648" loading="lazy" decoding="async"
                       alt="Altino Café Noble — Aroma del Paramillo"
                      
                     />
-                    <p class="index__node--29c5c8ac"
+                    <p class="index-footer__address"
                      
                     >
                       Dabeiba, Antioquia, Colombia.<br />1850 MSNM · Nudo del
                       Paramillo.
                     </p>
                   </div>
-                  <div class="index__node--045f8c6d">
-                    <h4 class="index__node--591c1855"
+                  <div class="index-footer__col">
+                    <h4 class="index-footer__heading"
                      
                     >
                       Navegación
                     </h4>
                     <a
                       href="index.html"
-                      class="scp8 index__node--6a494842"
+                      class="u-hover-white index-footer__link"
                      
                       >Inicio</a
                     ><a
                       href="origen.html"
-                      class="scp8 index__node--6a494842"
+                      class="u-hover-white index-footer__link"
                      
                       >Origen</a
                     ><a
                       href="catalogo.html"
-                      class="scp8 index__node--6a494842"
+                      class="u-hover-white index-footer__link"
                      
                       >Catálogo</a
                     ><a
                       href="contacto.html"
-                      class="scp8 index__node--6a494842"
+                      class="u-hover-white index-footer__link"
                      
                       >Contacto</a
                     ><a
                       href="legal.html"
-                      class="scp8 index__node--6a494842"
+                      class="u-hover-white index-footer__link"
                      
                       >Términos y Privacidad</a
                     >
                   </div>
-                  <div class="index__node--045f8c6d">
-                    <h4 class="index__node--591c1855"
+                  <div class="index-footer__col">
+                    <h4 class="index-footer__heading"
                      
                     >
                       Contacto
@@ -817,7 +871,7 @@
                       target="_blank"
                       rel="noopener"
                       aria-label="Escribir por WhatsApp"
-                      class="scp8 index__node--5f695a33"
+                      class="u-hover-white index-footer__contact-link"
                      
                       ><img src="assets/icon-whatsapp.png" class="altino-icon-png" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /> (+57) 313 711 9699</a
                     ><a
@@ -825,28 +879,28 @@
                       target="_blank"
                       rel="noopener"
                       aria-label="Instagram de Altino"
-                      class="scp8 index__node--5f695a33"
+                      class="u-hover-white index-footer__contact-link"
                      
                       ><img src="assets/icon-instagram.png" class="altino-icon-png" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /> @altino.cafe</a
-                    ><span class="index__node--896a09ce"
+                    ><span class="index-footer__location"
                      
                       ><img src="assets/icon-ubicacion.png" class="altino-icon-png" alt="" aria-hidden="true" width="96" height="96" loading="lazy" decoding="async" /> Dabeiba, Antioquia</span
                     >
                   </div>
-                  <div class="index__node--4791eedc"
+                  <div class="index-footer__distributors"
                    
                   >
-                    <h4 class="index__node--4fc5ba91"
+                    <h4 class="index-footer__distributors-heading"
                      
                     >
                       Distribuidores
                     </h4>
-                    <p class="index__node--276af282"
+                    <p class="index-footer__distributors-lead"
                      
                     >
                       ¿Haces crecer tu negocio con café de calidad?
                     </p>
-                    <p class="index__node--6639f2ca"
+                    <p class="index-footer__distributors-text"
                      
                     >
                       Tenemos precios especiales para distribuidores y
@@ -857,20 +911,20 @@
                       href="https://wa.me/573137119699?text=Hola%2C%20quiero%20ser%20distribuidor%20de%20Altino"
                       target="_blank"
                       rel="noopener"
-                      class="scp9 index__node--0c03aa77"
+                      class="u-hover-brighten index-footer__distributors-cta"
                      
                       >Quiero ser distribuidor →</a
                     >
                   </div>
                 </div>
-                <div class="index__node--c5c3da2f"
+                <div class="index-footer__bottom"
                  
                 >
-                  <span class="index__node--47130162"
+                  <span class="index-footer__copyright"
                    
                     >© 2025 Altino Café Noble. Todos los derechos
                     reservados.</span
-                  ><span class="index__node--2ba3cf1b"
+                  ><span class="index-footer__tagline"
                    
                     >Aroma del Paramillo</span
                   >

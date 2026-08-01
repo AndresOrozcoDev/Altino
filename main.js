@@ -132,6 +132,104 @@
     }
   }
 
+  // === Slider automático reutilizable ===
+  // Uso: <div data-altino-slider data-slider-interval="3000"> con un
+  // .altino-slider-track que contenga varios .altino-slide. Los puntos de
+  // navegación se generan automáticamente. Se reutiliza en origen.html y
+  // (a futuro) en catalogo.html sin tocar este archivo.
+  function initSliders(root) {
+    const scope = root || document;
+    const sliders = scope.querySelectorAll("[data-altino-slider]");
+    if (!sliders.length) return;
+    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    sliders.forEach((slider) => setupSlider(slider, reduceMotion));
+  }
+
+  function setupSlider(slider, reduceMotion) {
+    if (slider.__altinoSliderInit) return;
+
+    const track = slider.querySelector(".altino-slider-track");
+    const slides = track ? Array.from(track.querySelectorAll(".altino-slide")) : [];
+    if (!track || slides.length === 0) return;
+
+    slider.__altinoSliderInit = true;
+
+    const interval = parseInt(slider.getAttribute("data-slider-interval"), 10) || 3000;
+    let index = 0;
+    let timer = null;
+
+    // Puntos de navegación (solo si hay más de una imagen)
+    const dots = [];
+    if (slides.length > 1) {
+      const dotsWrap = document.createElement("div");
+      dotsWrap.className = "altino-slider-dots";
+      slides.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "altino-slider-dot";
+        dot.setAttribute("aria-label", "Ir a la imagen " + (i + 1) + " de " + slides.length);
+        dot.addEventListener("click", () => {
+          goTo(i);
+          restart();
+        });
+        dotsWrap.appendChild(dot);
+        dots.push(dot);
+      });
+      slider.appendChild(dotsWrap);
+    }
+
+    function render() {
+      track.style.transform = "translateX(" + (-index * 100) + "%)";
+      slides.forEach((slide, i) => {
+        slide.setAttribute("aria-hidden", i === index ? "false" : "true");
+      });
+      dots.forEach((dot, i) => {
+        if (i === index) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+    }
+
+    function goTo(i) {
+      index = (i + slides.length) % slides.length;
+      render();
+    }
+
+    function next() {
+      goTo(index + 1);
+    }
+
+    function start() {
+      if (timer || reduceMotion || slides.length < 2) return;
+      timer = window.setInterval(next, interval);
+    }
+
+    function stop() {
+      if (timer) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    function restart() {
+      stop();
+      start();
+    }
+
+    // Pausa al pasar el cursor o enfocar; reanuda al salir
+    slider.addEventListener("mouseenter", stop);
+    slider.addEventListener("mouseleave", start);
+    slider.addEventListener("focusin", stop);
+    slider.addEventListener("focusout", start);
+    // Pausa cuando la pestaña no está visible (ahorra batería/CPU)
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stop();
+      else start();
+    });
+
+    render();
+    start();
+  }
+
   function escapeHtml(value) {
     return String(value)
       .replace(/&/g, "&amp;")
@@ -410,11 +508,13 @@
     ensureIndexMobileMenu();
     boot();
     initScrollReveal();
+    initSliders();
   } else {
     document.addEventListener("DOMContentLoaded", () => {
       ensureIndexMobileMenu();
       boot();
       initScrollReveal();
+      initSliders();
     }, { once: true });
   }
 })();
